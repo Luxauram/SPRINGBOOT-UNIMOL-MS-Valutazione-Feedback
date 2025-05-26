@@ -24,6 +24,13 @@
    - [RabbitMQ - Published Events](#rabbitmq---published-events)
    - [RabbitMQ - Consumed Events](#rabbitmq---consumed-events)
 6. [Sicurezza e Autorizzazioni](#sicurezza-e-autorizzazioni)
+7. [Come Farlo Funzionare sui Vostri OS](#come-farlo-funzionare-sui-vostri-os)
+    - [1. Installazione di PostgreSQL](#1-installazione-di-postgresql)
+    - [2. Installazione di RabbitMQ](#2-installazione-di-rabbitmq)
+    - [3. Configurazione del Database](#3-configurazione-del-database)
+    - [4. Avvio del Microservizio](#4-avvio-del-microservizio)
+    - [5. Verifica dell'Avvio](#5-verifica-dellavvio)
+    - [6. Test Rapido dell'API](#6-test-rapido-dellapi)
 
 ---
 
@@ -372,6 +379,8 @@ GET     /api/v1/surveys/available
 
 ```
 
+---
+
 ### Surveys Response Endpoint
 
 ```bash
@@ -455,6 +464,326 @@ L'accesso alle API è regolato da autorizzazioni basate sui ruoli:
 - **ROLE_STUDENTS**: Può visualizzare solo le proprie valutazioni e compilare questionari
 - **ROLE_ADMINISTRATIVE**: Può gestire i questionari e visualizzare risultati aggregati
 
-_(Ipotizzio che il microservizio di **Gestione Utenti e Ruoli** utilizzi 3 ruoli con nomenclatura simile.)_
+_(Ipotizzo che il microservizio di **Gestione Utenti e Ruoli** utilizzi 3 ruoli con nomenclatura simile.)_
+
+---
+
+## Come Farlo Funzionare sui Vostri OS
+
+Brevissima guida per l'installazione di PostgreSQL, 
+RabbitMQ e l'avvio di Spring Boot (necessari a far 
+funzionare il microservizio).
+
+### 1. Installazione di PostgreSQL
+
+#### Windows
+
+1. Scarica l'installer da [postgresql.org/download/windows](https://www.postgresql.org/download/windows/).
+2. Esegui l'installer e segui i passaggi:
+
+    * Imposta una password per l'utente `postgres`.
+    * Lascia la porta predefinita `5432`.
+    * Installa anche **pgAdmin** se desideri un'interfaccia grafica.
+3. Verifica l'installazione:
+
+   ```bash
+   psql --version
+   ```
+
+---
+
+#### macOS
+
+1. Assicurati di avere Homebrew installato.
+2. Installa PostgreSQL:
+
+   ```bash
+   brew install postgresql
+   ```
+
+3\. Avvia il servizio:
+
+```bash
+brew services start postgresql
+```
+
+4\. Verifica l'installazione:
+
+```bash
+psql --version
+```
+
+---
+
+#### Ubuntu
+
+1. Aggiorna i pacchetti:
+
+   ```bash
+   sudo apt update
+   ```
+
+
+2\. Installa PostgreSQL:
+
+```bash
+sudo apt install postgresql postgresql-contrib
+```
+
+
+3\. Verifica l'installazione:
+
+```bash
+psql --version
+```
+
+---
+
+### 2. Installazione di RabbitMQ
+
+#### Windows
+
+1. Installa Erlang da [erlang.org/downloads](https://www.erlang.org/downloads).
+2. Scarica l'installer di RabbitMQ da [rabbitmq.com/install-windows.html](https://www.rabbitmq.com/install-windows.html).
+3. Esegui l'installer e segui le istruzioni.
+4. Abilita il plugin di gestione:
+
+   ```bash
+   rabbitmq-plugins enable rabbitmq_management
+   ```
+
+5\. Avvia il servizio RabbitMQ:
+
+```bash
+rabbitmq-service start
+```
+
+6\. Accedi all'interfaccia web su [http://localhost:15672](http://localhost:15672) con:
+
+* **Username**: `guest`
+* **Password**: `guest`
+
+---
+
+#### macOS
+
+1. Assicurati di avere Homebrew installato.
+2. Installa RabbitMQ:
+
+   ```bash
+   brew install rabbitmq
+   ```
+
+3\. Avvia il servizio:
+
+```bash
+brew services start rabbitmq
+```
+
+4\. Abilita il plugin di gestione:
+
+```bash
+rabbitmq-plugins enable rabbitmq_management
+```
+
+5\. Accedi all'interfaccia web su [http://localhost:15672](http://localhost:15672) con:
+
+* **Username**: `guest`
+* **Password**: `guest`([Stack Overflow][5])
+
+---
+
+#### Ubuntu
+
+1. Aggiorna i pacchetti:
+
+   ```bash
+   sudo apt update
+   ```
+
+2\. Installa Erlang:
+
+```bash
+sudo apt install erlang
+```
+
+3\. Installa RabbitMQ:
+
+```bash
+sudo apt install rabbitmq-server
+```
+
+4\. Abilita il plugin di gestione:
+
+```bash
+sudo rabbitmq-plugins enable rabbitmq_management
+```
+
+5\. Avvia il servizio RabbitMQ:
+
+```bash
+sudo systemctl start rabbitmq-server
+```
+
+6\. Accedi all'interfaccia web su [http://localhost:15672](http://localhost:15672) con:
+
+* **Username**: `guest`
+* **Password**: `guest`
+
+---
+
+### 3. Configurazione del Database
+
+#### Avvia PostgreSQL
+
+##### macOS (con Homebrew)
+
+```bash
+brew services start postgresql
+```
+
+##### Ubuntu
+
+```bash
+sudo systemctl start postgresql
+```
+
+##### Windows
+
+PostgreSQL dovrebbe avviarsi come servizio automaticamente. In caso contrario:
+
+1. Apri `Servizi` (digita "services.msc" nel menu Start)
+2. Cerca `postgresql-xx` e avvia manualmente il servizio
+
+---
+
+#### Accesso a PostgreSQL
+
+##### macOS/Linux
+
+```bash
+psql -U postgres
+```
+
+##### Windows
+
+1. Apri **SQL Shell (psql)** dal menu Start
+2. Inserisci:
+
+    * Server: `localhost`
+    * Porta: `5432`
+    * Database: `postgres`
+    * Username: `postgres`
+    * Password: (lascia vuoto o inserisci se configurato)
+
+#### Se ottieni errori come:
+
+```bash
+psql: FATAL: role "postgres" does not exist
+```
+
+Crea il ruolo:
+
+```bash
+sudo -u postgres createuser -s postgres
+# oppure entra come utente postgres (Linux/macOS)
+sudo -i -u postgres
+psql
+```
+
+e poi dopo:
+
+```bash
+CREATE ROLE postgres WITH LOGIN PASSWORD 'password';
+ALTER ROLE postgres CREATEDB;
+```
+
+---
+
+#### Crea il database
+
+```sql
+CREATE DATABASE assessment_feedback_db;
+```
+
+---
+
+#### (Facoltativo) Crea un utente per l'app
+
+```sql
+CREATE USER feedback_user WITH PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE assessment_feedback_db TO feedback_user;
+```
+
+---
+
+### 4. Avvio del Microservizio
+
+1. Clona il repository:
+
+   ```bash
+   git clone https://github.com/Luxauram/SPRINGBOOT-UNIMOL-MS-Valutazione-Feedback.git
+   cd assessment-feedback-service
+   ```
+
+2\. Verifica il file `application.properties` con le seguenti configurazioni:
+
+```properties
+server.port=8082
+spring.datasource.url=jdbc:postgresql://localhost:5432/assessment_feedback_db
+spring.datasource.username=postgres
+spring.datasource.password=password
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+```
+
+
+3\. Avvia l'applicazione:
+
+```bash
+./mvnw spring-boot:run
+```
+
+Oppure, se utilizzi Gradle:
+
+```bash
+./gradlew bootRun
+```
+
+---
+
+### 5. Verifica dell'Avvio
+
+* Accedi a Swagger UI su: [http://localhost:8082/swagger-ui.html](http://localhost:8082/swagger-ui.html)
+* Verifica l'endpoint Actuator: [http://localhost:8082/actuator/health](http://localhost:8082/actuator/health)
+
+---
+
+### 6. Test Rapido dell'API
+
+#### Creazione di una Valutazione
+
+```bash
+curl -X POST http://localhost:8082/api/v1/assessments \
+  -H "Content-Type: application/json" \
+  -d '{
+    "referenceId": 1,
+    "referenceType": "ASSIGNMENT",
+    "studentId": 123,
+    "teacherId": 456,
+    "score": 28.5,
+    "assessmentDate": "2025-05-23T10:00:00",
+    "notes": "Ottima prova",
+    "courseId": 789
+  }'
+```
+
+#### Recupero delle Valutazioni
+
+```bash
+curl http://localhost:8082/api/v1/assessments
+```
 
 ---
