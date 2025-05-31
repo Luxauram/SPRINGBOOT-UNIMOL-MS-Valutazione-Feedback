@@ -8,24 +8,24 @@ public class SurveyResponseDTO {
 
     private Long id;
 
-    @NotNull(message = "Survey ID is required")
+    @NotNull(message = "SurveyID richiesto")
     private Long surveyId;
 
     private Long studentId;
 
-    @NotNull(message = "Question ID is required")
+    @NotNull(message = "QuestionID richiesto")
     private Long questionId;
 
-    @Min(value = 1, message = "Rating must be between 1 and 5")
-    @Max(value = 5, message = "Rating must be between 1 and 5")
+    @Min(value = 1, message = "La valutazione deve essere tra 1 e 5")
+    @Max(value = 5, message = "La valutazione deve essere tra 1 e 5")
     private Integer numericRating;
 
-    @Size(max = 1000, message = "Comment cannot exceed 1000 characters")
+    @Size(max = 1000, message = "I commenti non possono superare i 1000 caratteri")
     private String textComment;
 
     private LocalDateTime submissionDate;
 
-    // Constructors
+    // Costruttore
     public SurveyResponseDTO() {
     }
 
@@ -40,65 +40,7 @@ public class SurveyResponseDTO {
         this.submissionDate = submissionDate;
     }
 
-    // Getters
-    public Long getId() {
-        return id;
-    }
-
-    public Long getSurveyId() {
-        return surveyId;
-    }
-
-    public Long getStudentId() {
-        return studentId;
-    }
-
-    public Long getQuestionId() {
-        return questionId;
-    }
-
-    public Integer getNumericRating() {
-        return numericRating;
-    }
-
-    public String getTextComment() {
-        return textComment;
-    }
-
-    public LocalDateTime getSubmissionDate() {
-        return submissionDate;
-    }
-
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setSurveyId(Long surveyId) {
-        this.surveyId = surveyId;
-    }
-
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
-    }
-
-    public void setQuestionId(Long questionId) {
-        this.questionId = questionId;
-    }
-
-    public void setNumericRating(Integer numericRating) {
-        this.numericRating = numericRating;
-    }
-
-    public void setTextComment(String textComment) {
-        this.textComment = textComment;
-    }
-
-    public void setSubmissionDate(LocalDateTime submissionDate) {
-        this.submissionDate = submissionDate;
-    }
-
-    // Builder pattern implementation
+    // Builder pattern
     public static Builder builder() {
         return new Builder();
     }
@@ -153,7 +95,57 @@ public class SurveyResponseDTO {
         }
     }
 
-    // equals, hashCode and toString methods
+    // Getter e Setter
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getSurveyId() {
+        return surveyId;
+    }
+    public void setSurveyId(Long surveyId) {
+        this.surveyId = surveyId;
+    }
+
+    public Long getStudentId() {
+        return studentId;
+    }
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    public Long getQuestionId() {
+        return questionId;
+    }
+    public void setQuestionId(Long questionId) {
+        this.questionId = questionId;
+    }
+
+    public Integer getNumericRating() {
+        return numericRating;
+    }
+    public void setNumericRating(Integer numericRating) {
+        this.numericRating = numericRating;
+    }
+
+    public String getTextComment() {
+        return textComment;
+    }
+    public void setTextComment(String textComment) {
+        this.textComment = textComment;
+    }
+
+    public LocalDateTime getSubmissionDate() {
+        return submissionDate;
+    }
+    public void setSubmissionDate(LocalDateTime submissionDate) {
+        this.submissionDate = submissionDate;
+    }
+
+    // Equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -168,12 +160,14 @@ public class SurveyResponseDTO {
                 Objects.equals(submissionDate, that.submissionDate);
     }
 
+    // HashCode
     @Override
     public int hashCode() {
         return Objects.hash(id, surveyId, studentId, questionId,
                 numericRating, textComment, submissionDate);
     }
 
+    // ToString
     @Override
     public String toString() {
         return "SurveyResponseDTO{" +

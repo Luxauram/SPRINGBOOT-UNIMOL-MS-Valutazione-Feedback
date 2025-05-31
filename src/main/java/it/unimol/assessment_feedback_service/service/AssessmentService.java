@@ -3,7 +3,7 @@ package it.unimol.assessment_feedback_service.service;
 import it.unimol.assessment_feedback_service.dto.AssessmentDTO;
 import it.unimol.assessment_feedback_service.model.Assessment;
 import it.unimol.assessment_feedback_service.enums.ReferenceType;
-// import it.unimol.assessment_feedback_service.exception.ResourceNotFoundException;
+import it.unimol.assessment_feedback_service.exception.ResourceNotFoundException;
 import it.unimol.assessment_feedback_service.repository.AssessmentRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,10 +28,8 @@ public class AssessmentService {
     }
 
     public AssessmentDTO getAssessmentById(Long id) {
-        Assessment assessment = assessmentRepository.findById(id).orElse(null);
-        // TODO: Error Handling
-        // Assessment assessment = assessmentRepository.findById(id)
-        //         .orElseThrow(() -> new ResourceNotFoundException("Valutazione non trovata con id: " + id));
+         Assessment assessment = assessmentRepository.findById(id)
+                 .orElseThrow(() -> new ResourceNotFoundException("Valutazione non trovata con id: " + id));
         return assessment != null ? convertToDTO(assessment) : null;
     }
 
@@ -69,10 +67,8 @@ public class AssessmentService {
 
     @Transactional
     public AssessmentDTO updateAssessment(Long id, AssessmentDTO assessmentDTO) {
-        Assessment existingAssessment = assessmentRepository.findById(id).orElse(null);
-        // TODO: Error Handling
-        // Assessment existingAssessment = assessmentRepository.findById(id)
-        //         .orElseThrow(() -> new ResourceNotFoundException("Valutazione non trovata con id: " + id));
+         Assessment existingAssessment = assessmentRepository.findById(id)
+                 .orElseThrow(() -> new ResourceNotFoundException("Valutazione non trovata con id: " + id));
 
         if (existingAssessment != null) {
             existingAssessment.setScore(assessmentDTO.getScore());
@@ -85,11 +81,9 @@ public class AssessmentService {
 
     @Transactional
     public void deleteAssessment(Long id) {
-        // TODO: Error Handling
-        // if (!assessmentRepository.existsById(id)) {
-        //     throw new ResourceNotFoundException("Valutazione non trovata con id: " + id);
-        // }
-        assessmentRepository.deleteById(id);
+         if (!assessmentRepository.existsById(id)) {
+             throw new ResourceNotFoundException("Valutazione non trovata con id: " + id);
+         }
     }
 
     private AssessmentDTO convertToDTO(Assessment assessment) {

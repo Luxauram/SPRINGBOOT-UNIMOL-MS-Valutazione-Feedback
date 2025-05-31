@@ -38,7 +38,7 @@ public class SurveyResponse {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    // Constructors
+    // Costruttore
     public SurveyResponse() {
     }
 
@@ -56,81 +56,7 @@ public class SurveyResponse {
         this.updatedAt = updatedAt;
     }
 
-    // Getters
-    public Long getId() {
-        return id;
-    }
-
-    public TeacherSurvey getSurvey() {
-        return survey;
-    }
-
-    public Long getStudentId() {
-        return studentId;
-    }
-
-    public Long getQuestionId() {
-        return questionId;
-    }
-
-    public Integer getNumericRating() {
-        return numericRating;
-    }
-
-    public String getTextComment() {
-        return textComment;
-    }
-
-    public LocalDateTime getSubmissionDate() {
-        return submissionDate;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setSurvey(TeacherSurvey survey) {
-        this.survey = survey;
-    }
-
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
-    }
-
-    public void setQuestionId(Long questionId) {
-        this.questionId = questionId;
-    }
-
-    public void setNumericRating(Integer numericRating) {
-        this.numericRating = numericRating;
-    }
-
-    public void setTextComment(String textComment) {
-        this.textComment = textComment;
-    }
-
-    public void setSubmissionDate(LocalDateTime submissionDate) {
-        this.submissionDate = submissionDate;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    // Builder pattern implementation
+    // Builder pattern
     public static Builder builder() {
         return new Builder();
     }
@@ -197,7 +123,71 @@ public class SurveyResponse {
         }
     }
 
-    // JPA lifecycle methods
+    // Getter e Setter
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public TeacherSurvey getSurvey() {
+        return survey;
+    }
+    public void setSurvey(TeacherSurvey survey) {
+        this.survey = survey;
+    }
+
+    public Long getStudentId() {
+        return studentId;
+    }
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    public Long getQuestionId() {
+        return questionId;
+    }
+    public void setQuestionId(Long questionId) {
+        this.questionId = questionId;
+    }
+
+    public Integer getNumericRating() {
+        return numericRating;
+    }
+    public void setNumericRating(Integer numericRating) {
+        this.numericRating = numericRating;
+    }
+
+    public String getTextComment() {
+        return textComment;
+    }
+    public void setTextComment(String textComment) {
+        this.textComment = textComment;
+    }
+
+    public LocalDateTime getSubmissionDate() {
+        return submissionDate;
+    }
+    public void setSubmissionDate(LocalDateTime submissionDate) {
+        this.submissionDate = submissionDate;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    // JPA
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
@@ -209,7 +199,7 @@ public class SurveyResponse {
         updatedAt = LocalDateTime.now();
     }
 
-    // equals, hashCode and toString methods
+    // Equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -226,12 +216,14 @@ public class SurveyResponse {
                 Objects.equals(updatedAt, that.updatedAt);
     }
 
+    // HashCode
     @Override
     public int hashCode() {
         return Objects.hash(id, survey, studentId, questionId, numericRating,
                 textComment, submissionDate, createdAt, updatedAt);
     }
 
+    // ToString
     @Override
     public String toString() {
         return "SurveyResponse{" +

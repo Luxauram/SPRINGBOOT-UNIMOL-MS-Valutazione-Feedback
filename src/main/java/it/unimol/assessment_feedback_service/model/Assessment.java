@@ -65,85 +65,6 @@ public class Assessment {
         this.updatedAt = updatedAt;
     }
 
-    // Getter e Setter
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getReferenceId() {
-        return referenceId;
-    }
-    public void setReferenceId(Long referenceId) {
-        this.referenceId = referenceId;
-    }
-
-    public ReferenceType getReferenceType() {
-        return referenceType;
-    }
-    public void setReferenceType(ReferenceType referenceType) {
-        this.referenceType = referenceType;
-    }
-
-    public Long getStudentId() {
-        return studentId;
-    }
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
-    }
-
-    public Long getTeacherId() {
-        return teacherId;
-    }
-    public void setTeacherId(Long teacherId) {
-        this.teacherId = teacherId;
-    }
-
-    public Double getScore() {
-        return score;
-    }
-    public void setScore(Double score) {
-        this.score = score;
-    }
-
-    public LocalDateTime getAssessmentDate() {
-        return assessmentDate;
-    }
-    public void setAssessmentDate(LocalDateTime assessmentDate) {
-        this.assessmentDate = assessmentDate;
-    }
-
-    public String getNotes() {
-        return notes;
-    }
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
-    public Long getCourseId() {
-        return courseId;
-    }
-    public void setCourseId(Long courseId) {
-        this.courseId = courseId;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-
     // Builder pattern
     public static Builder builder() {
         return new Builder();
@@ -221,6 +142,84 @@ public class Assessment {
             return new Assessment(id, referenceId, referenceType, studentId, teacherId,
                     score, assessmentDate, notes, courseId, createdAt, updatedAt);
         }
+    }
+
+    // Getter e Setter
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getReferenceId() {
+        return referenceId;
+    }
+    public void setReferenceId(Long referenceId) {
+        this.referenceId = referenceId;
+    }
+
+    public ReferenceType getReferenceType() {
+        return referenceType;
+    }
+    public void setReferenceType(ReferenceType referenceType) {
+        this.referenceType = referenceType;
+    }
+
+    public Long getStudentId() {
+        return studentId;
+    }
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    public Long getTeacherId() {
+        return teacherId;
+    }
+    public void setTeacherId(Long teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    public LocalDateTime getAssessmentDate() {
+        return assessmentDate;
+    }
+    public void setAssessmentDate(LocalDateTime assessmentDate) {
+        this.assessmentDate = assessmentDate;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public Long getCourseId() {
+        return courseId;
+    }
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     // JPA

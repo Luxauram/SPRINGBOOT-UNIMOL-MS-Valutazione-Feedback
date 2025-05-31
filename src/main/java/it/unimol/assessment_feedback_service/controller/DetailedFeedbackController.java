@@ -22,7 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/feedback")
-@Tag(name = "DetailedFeedback Controller", description = "API per la gestione di DetailedFeedback")
+@Tag(name = "DetailedFeedback Controller", description = "API per la gestione di DetailedFeedback (Feedback)")
 public class DetailedFeedbackController {
 
     // Costruttore

@@ -21,7 +21,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/assessments")
-@Tag(name = "Assessment Controller", description = "API per la gestione di Assessment")
+@Tag(name = "Assessment Controller", description = "API per la gestione di Assessment (Valutazioni)")
 public class AssessmentController {
 
     // Costruttore

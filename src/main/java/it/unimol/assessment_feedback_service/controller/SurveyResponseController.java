@@ -22,7 +22,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/surveys")
-@Tag(name = "SurveyResponse Controller", description = "API per la gestione di SurveyResponse")
+@Tag(name = "SurveyResponse Controller", description = "API per la gestione di SurveyResponse (Risposte Questionario)")
 public class SurveyResponseController {
 
     // Costruttore

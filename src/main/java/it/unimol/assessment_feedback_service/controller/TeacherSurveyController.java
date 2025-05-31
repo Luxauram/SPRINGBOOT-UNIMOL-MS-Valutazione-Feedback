@@ -22,7 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/surveys")
-@Tag(name = "TeacherSurvey Controller", description = "API per la gestione di TeacherSurvey")
+@Tag(name = "TeacherSurvey Controller", description = "API per la gestione di TeacherSurvey (Questionario Docente)")
 public class TeacherSurveyController {
 
     // Costruttore

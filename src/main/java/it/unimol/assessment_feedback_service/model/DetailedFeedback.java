@@ -37,7 +37,7 @@ public class DetailedFeedback {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    // Constructors
+    // Costruttore
     public DetailedFeedback() {
     }
 
@@ -54,73 +54,7 @@ public class DetailedFeedback {
         this.updatedAt = updatedAt;
     }
 
-    // Getters
-    public Long getId() {
-        return id;
-    }
-
-    public Assessment getAssessment() {
-        return assessment;
-    }
-
-    public String getFeedbackText() {
-        return feedbackText;
-    }
-
-    public FeedbackCategory getCategory() {
-        return category;
-    }
-
-    public String getStrengths() {
-        return strengths;
-    }
-
-    public String getImprovementAreas() {
-        return improvementAreas;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setAssessment(Assessment assessment) {
-        this.assessment = assessment;
-    }
-
-    public void setFeedbackText(String feedbackText) {
-        this.feedbackText = feedbackText;
-    }
-
-    public void setCategory(FeedbackCategory category) {
-        this.category = category;
-    }
-
-    public void setStrengths(String strengths) {
-        this.strengths = strengths;
-    }
-
-    public void setImprovementAreas(String improvementAreas) {
-        this.improvementAreas = improvementAreas;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    // Builder pattern implementation
+    // Builder pattern
     public static Builder builder() {
         return new Builder();
     }
@@ -181,7 +115,64 @@ public class DetailedFeedback {
         }
     }
 
-    // JPA lifecycle methods
+    // Getter e Setter
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Assessment getAssessment() {
+        return assessment;
+    }
+    public void setAssessment(Assessment assessment) {
+        this.assessment = assessment;
+    }
+
+    public String getFeedbackText() {
+        return feedbackText;
+    }
+    public void setFeedbackText(String feedbackText) {
+        this.feedbackText = feedbackText;
+    }
+
+    public FeedbackCategory getCategory() {
+        return category;
+    }
+    public void setCategory(FeedbackCategory category) {
+        this.category = category;
+    }
+
+    public String getStrengths() {
+        return strengths;
+    }
+    public void setStrengths(String strengths) {
+        this.strengths = strengths;
+    }
+
+    public String getImprovementAreas() {
+        return improvementAreas;
+    }
+    public void setImprovementAreas(String improvementAreas) {
+        this.improvementAreas = improvementAreas;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    // JPA
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
@@ -193,7 +184,7 @@ public class DetailedFeedback {
         updatedAt = LocalDateTime.now();
     }
 
-    // equals, hashCode and toString methods
+    // Equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -209,12 +200,14 @@ public class DetailedFeedback {
                 Objects.equals(updatedAt, that.updatedAt);
     }
 
+    // HashCode
     @Override
     public int hashCode() {
         return Objects.hash(id, assessment, feedbackText, category,
                 strengths, improvementAreas, createdAt, updatedAt);
     }
 
+    // ToString
     @Override
     public String toString() {
         return "DetailedFeedback{" +

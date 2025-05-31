@@ -12,18 +12,18 @@ public class TeacherSurveyDTO {
 
     private Long id;
 
-    @NotNull(message = "Course ID is required")
+    @NotNull(message = "CourseID è richiesto")
     private Long courseId;
 
-    @NotNull(message = "Teacher ID is required")
+    @NotNull(message = "TeacherID è richiesto")
     private Long teacherId;
 
-    @NotBlank(message = "Academic year is required")
-    @Pattern(regexp = "\\d{4}-\\d{4}", message = "Academic year format should be YYYY-YYYY")
+    @NotBlank(message = "AcademicYear è richiesto")
+    @Pattern(regexp = "\\d{4}-\\d{4}", message = "Il formato dell'anno accademico deve essere YYYY-YYYY")
     private String academicYear;
 
-    @NotNull(message = "Semester is required")
-    @Positive(message = "Semester must be positive")
+    @NotNull(message = "Semester è richiesto")
+    @Positive(message = "Semester deve essere un numero positivo")
     private Integer semester;
 
     private SurveyStatus status;
@@ -32,7 +32,7 @@ public class TeacherSurveyDTO {
 
     private LocalDateTime closingDate;
 
-    // Constructors
+    // Costruttore
     public TeacherSurveyDTO() {
     }
 
@@ -49,73 +49,7 @@ public class TeacherSurveyDTO {
         this.closingDate = closingDate;
     }
 
-    // Getters
-    public Long getId() {
-        return id;
-    }
-
-    public Long getCourseId() {
-        return courseId;
-    }
-
-    public Long getTeacherId() {
-        return teacherId;
-    }
-
-    public String getAcademicYear() {
-        return academicYear;
-    }
-
-    public Integer getSemester() {
-        return semester;
-    }
-
-    public SurveyStatus getStatus() {
-        return status;
-    }
-
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public LocalDateTime getClosingDate() {
-        return closingDate;
-    }
-
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setCourseId(Long courseId) {
-        this.courseId = courseId;
-    }
-
-    public void setTeacherId(Long teacherId) {
-        this.teacherId = teacherId;
-    }
-
-    public void setAcademicYear(String academicYear) {
-        this.academicYear = academicYear;
-    }
-
-    public void setSemester(Integer semester) {
-        this.semester = semester;
-    }
-
-    public void setStatus(SurveyStatus status) {
-        this.status = status;
-    }
-
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public void setClosingDate(LocalDateTime closingDate) {
-        this.closingDate = closingDate;
-    }
-
-    // Builder pattern implementation
+    // Builder pattern
     public static Builder builder() {
         return new Builder();
     }
@@ -176,7 +110,64 @@ public class TeacherSurveyDTO {
         }
     }
 
-    // equals, hashCode and toString methods
+    // Getter e Setter
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getCourseId() {
+        return courseId;
+    }
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
+    }
+
+    public Long getTeacherId() {
+        return teacherId;
+    }
+    public void setTeacherId(Long teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    public String getAcademicYear() {
+        return academicYear;
+    }
+    public void setAcademicYear(String academicYear) {
+        this.academicYear = academicYear;
+    }
+
+    public Integer getSemester() {
+        return semester;
+    }
+    public void setSemester(Integer semester) {
+        this.semester = semester;
+    }
+
+    public SurveyStatus getStatus() {
+        return status;
+    }
+    public void setStatus(SurveyStatus status) {
+        this.status = status;
+    }
+
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public LocalDateTime getClosingDate() {
+        return closingDate;
+    }
+    public void setClosingDate(LocalDateTime closingDate) {
+        this.closingDate = closingDate;
+    }
+
+    // Equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -192,12 +183,14 @@ public class TeacherSurveyDTO {
                 Objects.equals(closingDate, that.closingDate);
     }
 
+    // HashCode
     @Override
     public int hashCode() {
         return Objects.hash(id, courseId, teacherId, academicYear,
                 semester, status, creationDate, closingDate);
     }
 
+    // ToString
     @Override
     public String toString() {
         return "TeacherSurveyDTO{" +

@@ -42,7 +42,7 @@ public class TeacherSurvey {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    // Constructors
+    // Costruttore
     public TeacherSurvey() {
     }
 
@@ -61,89 +61,7 @@ public class TeacherSurvey {
         this.updatedAt = updatedAt;
     }
 
-    // Getters
-    public Long getId() {
-        return id;
-    }
-
-    public Long getCourseId() {
-        return courseId;
-    }
-
-    public Long getTeacherId() {
-        return teacherId;
-    }
-
-    public String getAcademicYear() {
-        return academicYear;
-    }
-
-    public Integer getSemester() {
-        return semester;
-    }
-
-    public SurveyStatus getStatus() {
-        return status;
-    }
-
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public LocalDateTime getClosingDate() {
-        return closingDate;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setCourseId(Long courseId) {
-        this.courseId = courseId;
-    }
-
-    public void setTeacherId(Long teacherId) {
-        this.teacherId = teacherId;
-    }
-
-    public void setAcademicYear(String academicYear) {
-        this.academicYear = academicYear;
-    }
-
-    public void setSemester(Integer semester) {
-        this.semester = semester;
-    }
-
-    public void setStatus(SurveyStatus status) {
-        this.status = status;
-    }
-
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public void setClosingDate(LocalDateTime closingDate) {
-        this.closingDate = closingDate;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    // Builder pattern implementation
+    // Builder pattern
     public static Builder builder() {
         return new Builder();
     }
@@ -216,7 +134,78 @@ public class TeacherSurvey {
         }
     }
 
-    // JPA lifecycle methods
+    // Getter e Setter
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getCourseId() {
+        return courseId;
+    }
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
+    }
+
+    public Long getTeacherId() {
+        return teacherId;
+    }
+    public void setTeacherId(Long teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    public String getAcademicYear() {
+        return academicYear;
+    }
+    public void setAcademicYear(String academicYear) {
+        this.academicYear = academicYear;
+    }
+
+    public Integer getSemester() {
+        return semester;
+    }
+    public void setSemester(Integer semester) {
+        this.semester = semester;
+    }
+
+    public SurveyStatus getStatus() {
+        return status;
+    }
+    public void setStatus(SurveyStatus status) {
+        this.status = status;
+    }
+
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public LocalDateTime getClosingDate() {
+        return closingDate;
+    }
+    public void setClosingDate(LocalDateTime closingDate) {
+        this.closingDate = closingDate;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    // JPA
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
@@ -228,7 +217,7 @@ public class TeacherSurvey {
         updatedAt = LocalDateTime.now();
     }
 
-    // equals, hashCode and toString methods
+    // Equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -246,12 +235,14 @@ public class TeacherSurvey {
                 Objects.equals(updatedAt, that.updatedAt);
     }
 
+    // hashCode
     @Override
     public int hashCode() {
         return Objects.hash(id, courseId, teacherId, academicYear, semester,
                 status, creationDate, closingDate, createdAt, updatedAt);
     }
 
+    // ToString
     @Override
     public String toString() {
         return "TeacherSurvey{" +

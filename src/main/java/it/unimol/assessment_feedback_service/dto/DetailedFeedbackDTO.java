@@ -8,34 +8,34 @@ import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 
-@Schema(description = "Data Transfer Object for detailed feedback information")
+@Schema(description = "DTO sul Feedback")
 public class DetailedFeedbackDTO {
 
-    @Schema(description = "Unique identifier of the feedback", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
+    @Schema(description = "ID Feedback", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
     private Long id;
 
-    @Schema(description = "ID of the assessment this feedback belongs to", example = "123", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotNull(message = "Assessment ID is required")
+    @Schema(description = "ID della valutazione a cui appartiene il Feedback", example = "123", requiredMode = Schema.RequiredMode.REQUIRED)
+    @NotNull(message = "AssessmentId richiesto")
     private Long assessmentId;
 
-    @Schema(description = "Main feedback text content", example = "The student demonstrated excellent understanding of the core concepts...", requiredMode = Schema.RequiredMode.REQUIRED, maxLength = 2000)
-    @NotBlank(message = "Feedback text is required")
-    @Size(max = 2000, message = "Feedback text cannot exceed 2000 characters")
+    @Schema(description = "Contenuto principale del testo di feedback", example = "Lo studente ha dimostrato un'eccellente comprensione dei concetti fondamentali...", requiredMode = Schema.RequiredMode.REQUIRED, maxLength = 2000)
+    @NotBlank(message = "FeedbackText richiesto")
+    @Size(max = 2000, message = "Il testo del Feedback (feedbackText) non può superare i 2000 caratteri")
     private String feedbackText;
 
-    @Schema(description = "Category of the feedback", example = "POSITIVE", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotNull(message = "Category is required")
+    @Schema(description = "La categoria del Feedback", example = "POSITIVE", requiredMode = Schema.RequiredMode.REQUIRED)
+    @NotNull(message = "Category richiesto")
     private FeedbackCategory category;
 
-    @Schema(description = "Areas where the student showed strengths", example = "Strong analytical skills, clear presentation, good use of examples", maxLength = 1000)
-    @Size(max = 1000, message = "Strengths cannot exceed 1000 characters")
+    @Schema(description = "Aree in cui lo studente ha mostrato punti di forza", example = "Forti capacità analitiche, presentazione chiara, buon uso di esempi", maxLength = 1000)
+    @Size(max = 1000, message = "I punti di forza (strengths) non possono superare i 1000 caratteri")
     private String strengths;
 
-    @Schema(description = "Areas that need improvement", example = "Could improve time management and provide more detailed explanations", maxLength = 1000)
-    @Size(max = 1000, message = "Improvement areas cannot exceed 1000 characters")
+    @Schema(description = "Aree da migliorare", example = "Potrebbe migliorare la gestione del tempo e fornire spiegazioni più dettagliate", maxLength = 1000)
+    @Size(max = 1000, message = "Le aree di miglioramento (improvementAreas) non può superare i 1000 caratteri")
     private String improvementAreas;
 
-    // Costruttori
+    // Costruttore
     public DetailedFeedbackDTO() {}
 
     public DetailedFeedbackDTO(Long id, Long assessmentId, String feedbackText, FeedbackCategory category,
@@ -100,7 +100,6 @@ public class DetailedFeedbackDTO {
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -108,7 +107,6 @@ public class DetailedFeedbackDTO {
     public Long getAssessmentId() {
         return assessmentId;
     }
-
     public void setAssessmentId(Long assessmentId) {
         this.assessmentId = assessmentId;
     }
@@ -116,7 +114,6 @@ public class DetailedFeedbackDTO {
     public String getFeedbackText() {
         return feedbackText;
     }
-
     public void setFeedbackText(String feedbackText) {
         this.feedbackText = feedbackText;
     }
@@ -124,7 +121,6 @@ public class DetailedFeedbackDTO {
     public FeedbackCategory getCategory() {
         return category;
     }
-
     public void setCategory(FeedbackCategory category) {
         this.category = category;
     }
@@ -132,7 +128,6 @@ public class DetailedFeedbackDTO {
     public String getStrengths() {
         return strengths;
     }
-
     public void setStrengths(String strengths) {
         this.strengths = strengths;
     }
@@ -140,25 +135,12 @@ public class DetailedFeedbackDTO {
     public String getImprovementAreas() {
         return improvementAreas;
     }
-
     public void setImprovementAreas(String improvementAreas) {
         this.improvementAreas = improvementAreas;
     }
 
-    // toString
-    @Override
-    public String toString() {
-        return "DetailedFeedbackDTO{" +
-                "id=" + id +
-                ", assessmentId=" + assessmentId +
-                ", feedbackText='" + feedbackText + '\'' +
-                ", category=" + category +
-                ", strengths='" + strengths + '\'' +
-                ", improvementAreas='" + improvementAreas + '\'' +
-                '}';
-    }
 
-    // equals e hashCode
+    // Equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -172,8 +154,22 @@ public class DetailedFeedbackDTO {
                 Objects.equals(improvementAreas, that.improvementAreas);
     }
 
+    // HashCode
     @Override
     public int hashCode() {
         return Objects.hash(id, assessmentId, feedbackText, category, strengths, improvementAreas);
+    }
+
+    // ToString
+    @Override
+    public String toString() {
+        return "DetailedFeedbackDTO{" +
+                "id=" + id +
+                ", assessmentId=" + assessmentId +
+                ", feedbackText='" + feedbackText + '\'' +
+                ", category=" + category +
+                ", strengths='" + strengths + '\'' +
+                ", improvementAreas='" + improvementAreas + '\'' +
+                '}';
     }
 }
