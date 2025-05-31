@@ -4,8 +4,8 @@ import it.unimol.assessment_feedback_service.dto.SurveyResponseDTO;
 import it.unimol.assessment_feedback_service.model.SurveyResponse;
 import it.unimol.assessment_feedback_service.model.TeacherSurvey;
 import it.unimol.assessment_feedback_service.enums.SurveyStatus;
-// import it.unimol.assessment_feedback_service.exception.ResourceNotFoundException;
-// import it.unimol.assessment_feedback_service.exception.SurveyClosedException;
+import it.unimol.assessment_feedback_service.exception.ResourceNotFoundException;
+import it.unimol.assessment_feedback_service.exception.SurveyClosedException;
 import it.unimol.assessment_feedback_service.repository.SurveyResponseRepository;
 import it.unimol.assessment_feedback_service.repository.TeacherSurveyRepository;
 import org.springframework.stereotype.Service;
@@ -53,15 +53,12 @@ public class SurveyResponseService {
 
     @Transactional
     public SurveyResponseDTO createResponse(SurveyResponseDTO responseDTO) {
-        TeacherSurvey survey = surveyRepository.findById(responseDTO.getSurveyId()).orElse(null);
+        TeacherSurvey survey = surveyRepository.findById(responseDTO.getSurveyId())
+               .orElseThrow(() -> new ResourceNotFoundException("Questionario non trovato con id: " + responseDTO.getSurveyId()));
 
-        // TODO: Error Handling
-        // TeacherSurvey survey = surveyRepository.findById(responseDTO.getSurveyId())
-        //         .orElseThrow(() -> new ResourceNotFoundException("Questionario non trovato con id: " + responseDTO.getSurveyId()));
-
-        // if (survey.getStatus() != SurveyStatus.ACTIVE) {
-        //     throw new SurveyClosedException("Non è possibile inviare risposte ad un Questionario chiuso");
-        // }
+        if (survey.getStatus() != SurveyStatus.ACTIVE) {
+             throw new SurveyClosedException("Non è possibile inviare risposte ad un Questionario chiuso");
+         }
 
         SurveyResponse response = convertToEntity(responseDTO);
         response.setSurvey(survey);
@@ -73,15 +70,12 @@ public class SurveyResponseService {
 
     @Transactional
     public List<SurveyResponseDTO> submitSurveyResponses(Long surveyId, List<SurveyResponseDTO> responseDTOs) {
-        TeacherSurvey survey = surveyRepository.findById(surveyId).orElse(null);
+         TeacherSurvey survey = surveyRepository.findById(surveyId)
+                .orElseThrow(() -> new ResourceNotFoundException("Questionario non trovato con id: " + surveyId));
 
-        // TODO: Error Handling
-        // TeacherSurvey survey = surveyRepository.findById(surveyId)
-        //         .orElseThrow(() -> new ResourceNotFoundException("Questionario non trovato con id: " + surveyId));
-
-        // if (survey.getStatus() != SurveyStatus.ACTIVE) {
-        //     throw new SurveyClosedException("Non è possibile inviare risposte ad un Questionario chiuso");
-        // }
+        if (survey.getStatus() != SurveyStatus.ACTIVE) {
+             throw new SurveyClosedException("Non è possibile inviare risposte ad un Questionario chiuso");
+         }
 
         List<SurveyResponse> responses = responseDTOs.stream()
                 .map(dto -> {

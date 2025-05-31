@@ -3,7 +3,7 @@ package it.unimol.assessment_feedback_service.service;
 import it.unimol.assessment_feedback_service.dto.TeacherSurveyDTO;
 import it.unimol.assessment_feedback_service.model.TeacherSurvey;
 import it.unimol.assessment_feedback_service.enums.SurveyStatus;
-// import it.unimol.assessment_feedback_service.exception.ResourceNotFoundException;
+import it.unimol.assessment_feedback_service.exception.ResourceNotFoundException;
 import it.unimol.assessment_feedback_service.repository.TeacherSurveyRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,10 +28,8 @@ public class TeacherSurveyService {
     }
 
     public TeacherSurveyDTO getSurveyById(Long id) {
-        TeacherSurvey survey = surveyRepository.findById(id).orElse(null);
-        // TODO: Error Handling
-        // TeacherSurvey survey = surveyRepository.findById(id)
-        //         .orElseThrow(() -> new ResourceNotFoundException("Questionario non trovato con id: " + id));
+        TeacherSurvey survey = surveyRepository.findById(id)
+                 .orElseThrow(() -> new ResourceNotFoundException("Questionario non trovato con id: " + id));
         return survey != null ? convertToDTO(survey) : null;
     }
 
@@ -55,6 +53,12 @@ public class TeacherSurveyService {
 
     @Transactional
     public TeacherSurveyDTO createSurvey(TeacherSurveyDTO surveyDTO) {
+        if (surveyRepository.existsByTeacherIdAndCourseIdAndAcademicYearAndSemester(
+                surveyDTO.getTeacherId(), surveyDTO.getCourseId(),
+                surveyDTO.getAcademicYear(), surveyDTO.getSemester())) {
+            throw new IllegalArgumentException("Esiste già un questionario per questo docente, corso e periodo");
+        }
+
         TeacherSurvey survey = convertToEntity(surveyDTO);
         survey.setStatus(SurveyStatus.ACTIVE);
         survey.setCreationDate(LocalDateTime.now());
@@ -65,10 +69,8 @@ public class TeacherSurveyService {
 
     @Transactional
     public TeacherSurveyDTO updateSurvey(Long id, TeacherSurveyDTO surveyDTO) {
-        TeacherSurvey existingSurvey = surveyRepository.findById(id).orElse(null);
-        // TODO: Error Handling
-        // TeacherSurvey existingSurvey = surveyRepository.findById(id)
-        //         .orElseThrow(() -> new ResourceNotFoundException("Questionario non trovato con id: " + id));
+        TeacherSurvey existingSurvey = surveyRepository.findById(id)
+                 .orElseThrow(() -> new ResourceNotFoundException("Questionario non trovato con id: " + id));
 
         if (existingSurvey != null) {
             existingSurvey.setAcademicYear(surveyDTO.getAcademicYear());
@@ -82,10 +84,8 @@ public class TeacherSurveyService {
 
     @Transactional
     public TeacherSurveyDTO changeSurveyStatus(Long id, SurveyStatus newStatus) {
-        TeacherSurvey survey = surveyRepository.findById(id).orElse(null);
-        // TODO: Error Handling
-        // TeacherSurvey survey = surveyRepository.findById(id)
-        //         .orElseThrow(() -> new ResourceNotFoundException("Questionario non trovato con id: " + id));
+        TeacherSurvey survey = surveyRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Questionario non trovato con id: " + id));
 
         if (survey != null) {
             survey.setStatus(newStatus);
@@ -102,10 +102,9 @@ public class TeacherSurveyService {
 
     @Transactional
     public void deleteSurvey(Long id) {
-        // TODO: Error Handling
-        // if (!surveyRepository.existsById(id)) {
-        //     throw new ResourceNotFoundException("Questionario non trovato con id: " + id);
-        // }
+         if (!surveyRepository.existsById(id)) {
+             throw new ResourceNotFoundException("Questionario non trovato con id: " + id);
+         }
         surveyRepository.deleteById(id);
     }
 

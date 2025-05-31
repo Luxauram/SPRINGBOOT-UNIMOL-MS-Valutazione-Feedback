@@ -3,7 +3,7 @@ package it.unimol.assessment_feedback_service.service;
 import it.unimol.assessment_feedback_service.dto.DetailedFeedbackDTO;
 import it.unimol.assessment_feedback_service.model.Assessment;
 import it.unimol.assessment_feedback_service.model.DetailedFeedback;
-// import it.unimol.assessment_feedback_service.exception.ResourceNotFoundException;
+import it.unimol.assessment_feedback_service.exception.ResourceNotFoundException;
 import it.unimol.assessment_feedback_service.repository.AssessmentRepository;
 import it.unimol.assessment_feedback_service.repository.DetailedFeedbackRepository;
 import org.springframework.stereotype.Service;
@@ -31,19 +31,15 @@ public class DetailedFeedbackService {
     }
 
     public DetailedFeedbackDTO getFeedbackById(Long id) {
-        DetailedFeedback feedback = feedbackRepository.findById(id).get();
-        // TODO: Error Handling
-        // DetailedFeedback feedback = feedbackRepository.findById(id)
-        //         .orElseThrow(() -> new ResourceNotFoundException("Feedback non trovato con id: " + id));
+        DetailedFeedback feedback = feedbackRepository.findById(id)
+                 .orElseThrow(() -> new ResourceNotFoundException("Feedback non trovato con id: " + id));
         return convertToDTO(feedback);
     }
 
     @Transactional
     public DetailedFeedbackDTO createFeedback(DetailedFeedbackDTO feedbackDTO) {
-        Assessment assessment = assessmentRepository.findById(feedbackDTO.getAssessmentId()).get();
-        // TODO: Error Handling
-        // Assessment assessment = assessmentRepository.findById(feedbackDTO.getAssessmentId())
-        //         .orElseThrow(() -> new ResourceNotFoundException("Valutazione non trovata con id: " + feedbackDTO.getAssessmentId()));
+        Assessment assessment = assessmentRepository.findById(feedbackDTO.getAssessmentId())
+                 .orElseThrow(() -> new ResourceNotFoundException("Valutazione non trovata con id: " + feedbackDTO.getAssessmentId()));
 
         DetailedFeedback feedback = convertToEntity(feedbackDTO);
         feedback.setAssessment(assessment);
@@ -54,10 +50,8 @@ public class DetailedFeedbackService {
 
     @Transactional
     public DetailedFeedbackDTO updateFeedback(Long id, DetailedFeedbackDTO feedbackDTO) {
-        DetailedFeedback existingFeedback = feedbackRepository.findById(id).get();
-        // TODO: Error Handling
-        // DetailedFeedback existingFeedback = feedbackRepository.findById(id)
-        //         .orElseThrow(() -> new ResourceNotFoundException("Feedback non trovato con id: " + id));
+        DetailedFeedback existingFeedback = feedbackRepository.findById(id)
+                 .orElseThrow(() -> new ResourceNotFoundException("Feedback non trovato con id: " + id));
 
         existingFeedback.setFeedbackText(feedbackDTO.getFeedbackText());
         existingFeedback.setCategory(feedbackDTO.getCategory());
@@ -70,12 +64,10 @@ public class DetailedFeedbackService {
 
     @Transactional
     public void deleteFeedback(Long id) {
-        feedbackRepository.deleteById(id);
-        // TODO: Error Handling
-        // if (!feedbackRepository.existsById(id)) {
-        //     throw new ResourceNotFoundException("Feedback non trovato con id: " + id);
-        // }
-        // feedbackRepository.deleteById(id);
+        if (!feedbackRepository.existsById(id)) {
+             throw new ResourceNotFoundException("Feedback non trovato con id: " + id);
+         }
+         feedbackRepository.deleteById(id);
     }
 
     private DetailedFeedbackDTO convertToDTO(DetailedFeedback feedback) {
