@@ -7,45 +7,45 @@ import jakarta.validation.constraints.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Schema(description = "Data Transfer Object for Assessment information")
+@Schema(description = "DTO sulle Valutazioni")
 public class AssessmentDTO {
 
-    @Schema(description = "Unique identifier of the assessment", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
+    @Schema(description = "ID Valutazione", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
     private Long id;
 
-    @Schema(description = "ID of the reference (assignment or exam)", example = "123", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotNull(message = "Reference ID is required")
+    @Schema(description = "ID Riferimento (valutazione o esame)", example = "123", requiredMode = Schema.RequiredMode.REQUIRED)
+    @NotNull(message = "ReferenceId richiesto")
     private Long referenceId;
 
-    @Schema(description = "Type of reference (ASSIGNMENT or EXAM)", example = "ASSIGNMENT", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotNull(message = "Reference type is required")
+    @Schema(description = "Tipo di Riferimento (può essere solo ASSIGNMENT o EXAM)", example = "ASSIGNMENT", requiredMode = Schema.RequiredMode.REQUIRED)
+    @NotNull(message = "Tipo di Riferimento (referenceType) richiesto")
     private ReferenceType referenceType;
 
-    @Schema(description = "ID of the student being assessed", example = "456", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotNull(message = "Student ID is required")
+    @Schema(description = "ID dello studente assegnato alla valutazione", example = "456", requiredMode = Schema.RequiredMode.REQUIRED)
+    @NotNull(message = "StudentId richiesto")
     private Long studentId;
 
-    @Schema(description = "ID of the teacher who made the assessment", example = "789", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotNull(message = "Teacher ID is required")
+    @Schema(description = "ID del Docente assegnato alla valutazione", example = "789", requiredMode = Schema.RequiredMode.REQUIRED)
+    @NotNull(message = "TeacherId richiesto")
     private Long teacherId;
 
-    @Schema(description = "Score assigned to the assessment", example = "27.5", minimum = "0", maximum = "30", requiredMode = Schema.RequiredMode.REQUIRED)
-    @NotNull(message = "Score is required")
-    @DecimalMin(value = "0.0", message = "Score must be positive")
-    @DecimalMax(value = "30.0", message = "Score cannot exceed 30")
+    @Schema(description = "Punteggio/Voto della valutazione", example = "27.5", minimum = "0", maximum = "30", requiredMode = Schema.RequiredMode.REQUIRED)
+    @NotNull(message = "Voto richiesto")
+    @DecimalMin(value = "0.0", message = "Il voto deve essere positivo")
+    @DecimalMax(value = "30.0", message = "Il voto non può superare 30")
     private Double score;
 
-    @Schema(description = "Date and time when the assessment was created", example = "2024-03-15T10:30:00", accessMode = Schema.AccessMode.READ_ONLY)
+    @Schema(description = "Data della creazione della valutazione", example = "2024-03-15T10:30:00", accessMode = Schema.AccessMode.READ_ONLY)
     private LocalDateTime assessmentDate;
 
-    @Schema(description = "Optional notes about the assessment", example = "Excellent work with minor improvements needed", maxLength = 1000)
-    @Size(max = 1000, message = "Notes cannot exceed 1000 characters")
+    @Schema(description = "Note opzionali della valutazione", example = "Ottimo lavoro, ma necessario qualche piccolo miglioramento", maxLength = 1000)
+    @Size(max = 1000, message = "La nota non può superare i 1000 caratteri")
     private String notes;
 
-    @Schema(description = "ID of the course to which this assessment belongs", example = "101")
+    @Schema(description = "ID del corso al quale appartiene la valutazione", example = "101")
     private Long courseId;
 
-    // Costruttori
+    // Costruttore
     public AssessmentDTO() {}
 
     public AssessmentDTO(Long id, Long referenceId, ReferenceType referenceType, Long studentId,
@@ -131,7 +131,6 @@ public class AssessmentDTO {
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -139,7 +138,6 @@ public class AssessmentDTO {
     public Long getReferenceId() {
         return referenceId;
     }
-
     public void setReferenceId(Long referenceId) {
         this.referenceId = referenceId;
     }
@@ -147,7 +145,6 @@ public class AssessmentDTO {
     public ReferenceType getReferenceType() {
         return referenceType;
     }
-
     public void setReferenceType(ReferenceType referenceType) {
         this.referenceType = referenceType;
     }
@@ -155,7 +152,6 @@ public class AssessmentDTO {
     public Long getStudentId() {
         return studentId;
     }
-
     public void setStudentId(Long studentId) {
         this.studentId = studentId;
     }
@@ -163,7 +159,6 @@ public class AssessmentDTO {
     public Long getTeacherId() {
         return teacherId;
     }
-
     public void setTeacherId(Long teacherId) {
         this.teacherId = teacherId;
     }
@@ -171,7 +166,6 @@ public class AssessmentDTO {
     public Double getScore() {
         return score;
     }
-
     public void setScore(Double score) {
         this.score = score;
     }
@@ -179,7 +173,6 @@ public class AssessmentDTO {
     public LocalDateTime getAssessmentDate() {
         return assessmentDate;
     }
-
     public void setAssessmentDate(LocalDateTime assessmentDate) {
         this.assessmentDate = assessmentDate;
     }
@@ -187,7 +180,6 @@ public class AssessmentDTO {
     public String getNotes() {
         return notes;
     }
-
     public void setNotes(String notes) {
         this.notes = notes;
     }
@@ -195,7 +187,6 @@ public class AssessmentDTO {
     public Long getCourseId() {
         return courseId;
     }
-
     public void setCourseId(Long courseId) {
         this.courseId = courseId;
     }
@@ -216,7 +207,7 @@ public class AssessmentDTO {
                 '}';
     }
 
-    // equals e hashCode
+    // Equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -233,6 +224,7 @@ public class AssessmentDTO {
                 Objects.equals(courseId, that.courseId);
     }
 
+    // HashCode
     @Override
     public int hashCode() {
         return Objects.hash(id, referenceId, referenceType, studentId, teacherId, score, assessmentDate, notes, courseId);

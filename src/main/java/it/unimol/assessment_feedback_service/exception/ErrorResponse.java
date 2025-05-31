@@ -9,11 +9,10 @@ public class ErrorResponse {
     private String message;
     private String path;
 
-    // Costruttore vuoto (sostituisce @NoArgsConstructor di Lombok)
+    // Costruttore
     public ErrorResponse() {
     }
 
-    // Costruttore con tutti i parametri (sostituisce @AllArgsConstructor di Lombok)
     public ErrorResponse(LocalDateTime timestamp, int status, String error, String message, String path) {
         this.timestamp = timestamp;
         this.status = status;
@@ -22,7 +21,7 @@ public class ErrorResponse {
         this.path = path;
     }
 
-    // Getter e Setter (sostituiscono @Data di Lombok)
+    // Getter e Setter
     public LocalDateTime getTimestamp() {
         return timestamp;
     }
@@ -63,7 +62,7 @@ public class ErrorResponse {
         this.path = path;
     }
 
-    // Metodi equals, hashCode e toString (facoltativi, ma spesso utili)
+    // Equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,6 +77,7 @@ public class ErrorResponse {
         return path != null ? path.equals(that.path) : that.path == null;
     }
 
+    // HashCode
     @Override
     public int hashCode() {
         int result = timestamp != null ? timestamp.hashCode() : 0;
@@ -88,6 +88,7 @@ public class ErrorResponse {
         return result;
     }
 
+    // ToString
     @Override
     public String toString() {
         return "ErrorResponse{" +
