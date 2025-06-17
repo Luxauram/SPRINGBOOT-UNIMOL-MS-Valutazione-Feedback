@@ -1,0 +1,169 @@
+# ===============================
+# PORTS CONFIGURATION
+# ===============================
+SERVER_PORT_AG=8080
+SERVER_PORT_UR=8081
+SERVER_PORT_AF=8082
+
+# ===============================
+# APPS NAME CONFIGURATION
+# ===============================
+SPRING_APPLICATION_NAME_AG=api-gateway
+SPRING_APPLICATION_NAME_UR=microservice-user-role
+SPRING_APPLICATION_NAME_AF=microservice-assessment-feedback
+
+APP_VERSION=1.0.0
+APP_DESCRIPTION_AG=Gateway principale per le API
+APP_DESCRIPTION_UR=Microservizio responsabile di autenticazione, autorizzazione e gestione delle informazioni degli utenti e dei loro ruoli nel sistema
+APP_DESCRIPTION_AF=Microservizio responsabile di aggiunta e visualizzazione del feedback fornito dai docenti sui compiti e sugli esami
+
+# ===============================
+# SPRING PROFILES
+# ===============================
+SPRING_PROFILES_ACTIVE_LOCAL=local
+SPRING_PROFILES_ACTIVE_DEV=dev
+SPRING_PROFILES_ACTIVE_DOCKER=docker
+
+# ===============================
+# DATABASE CONFIGURATION
+# ===============================
+
+# User Role Database
+DB_PG_NAME_UR=utenti_db
+DB_PG_NAME_URL_UR=jdbc:postgresql://localhost:5433/utenti_db
+
+# Assessment Feedback Database
+DB_PG_NAME_AF=assessment_feedback_db
+DB_PG_NAME_URL_AF=jdbc:postgresql://localhost:5432/assessment_feedback_db
+
+# Common Database Settings
+DB_PG_USER=postgres
+DB_PG_PASSWORD=password
+DATA_SOURCE_DRIVER_CLASS_NAME=org.postgresql.Driver
+
+# JPA/Hibernate Configuration
+JPA_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQLDialect
+JPA_SHOW_SQL=true
+JPA_HIBERNATE_DDL_AUTO=update
+JPA_HIBERNATE_FORMAT_SQL=true
+JPA_GEN_DDL=true
+JPA_HIBERNATE_NON_CTX_CREATION=true
+JPA_HIBERNATE_DEF_SCHEMA=public
+
+# ===============================
+# RABBITMQ CONFIGURATION
+# ===============================
+
+# Connection Settings
+RABBITMQ_HOST=localhost
+RABBITMQ_HOST_LOCAL=localhost
+RABBITMQ_HOST_DOCKER=rabbitmq
+RABBITMQ_PORT=5672
+RABBITMQ_USER=guest
+RABBITMQ_PASSWORD=guest
+
+# Message Configuration
+RABBITMQ_MSG_TTL=86400000
+
+# Dead Letter Queue Configuration
+RABBITMQ_EXCHANGE_DLX=unimol.dlx
+RABBITMQ_QUEUE_DLQ=unimol.dlq
+
+# ===================================================================
+# RABBITMQ - EXCHANGES
+# ===================================================================
+RABBITMQ_EXCHANGE_USERS=unimol.exchange
+RABBITMQ_EXCHANGE_ASSESSMENTS=unimol.exchange
+
+# ===================================================================
+# RABBITMQ - PUBLISHER QUEUES
+# ===================================================================
+
+# Assessment Queues
+RABBITMQ_QUEUE_ASSESSMENT_CREATED=assessment.created.queue
+RABBITMQ_QUEUE_ASSESSMENT_UPDATED=assessment.updated.queue
+RABBITMQ_QUEUE_ASSESSMENT_DELETED=assessment.deleted.queue
+
+# Feedback Queues
+RABBITMQ_QUEUE_FEEDBACK_CREATED=feedback.created.queue
+RABBITMQ_QUEUE_FEEDBACK_UPDATED=feedback.updated.queue
+RABBITMQ_QUEUE_FEEDBACK_DELETED=feedback.deleted.queue
+
+# Survey (Teacher/Response) Queues
+RABBITMQ_QUEUE_SURVEY_COMPLETED=survey.completed.queue
+RABBITMQ_QUEUE_SURVEY_RESPONSE_SUBMITTED=survey.response.submitted.queue
+RABBITMQ_QUEUE_SURVEY_RESPONSES_BULK=survey.responses.bulk.submitted.queue
+RABBITMQ_QUEUE_SURVEY_RESULTS_REQUESTED=survey.results.requested.queue
+RABBITMQ_QUEUE_SURVEY_COMMENTS_REQUESTED=survey.comments.requested.queue
+
+# ===================================================================
+# RABBITMQ - CONSUMER QUEUES
+# ===================================================================
+
+# Assignment Queues - Da Gestione Compiti (Vittorio)
+# RABBITMQ_QUEUE_ASSIGNMENT_CREATED=assignment.created.queue
+RABBITMQ_QUEUE_ASSIGNMENT_UPDATED=assignment.updated.queue
+RABBITMQ_QUEUE_ASSIGNMENT_SUBMITTED=assignment.submitted.queue
+
+#  Exam Queues - Da Gestione Esami (Luca)
+RABBITMQ_QUEUE_EXAM_COMPLETED=exam.completed.queue
+RABBITMQ_QUEUE_EXAM_GRADE_REGISTERED=exam.grade.registered.queue
+
+# Course Management Queues - Da Gestione Corsi (Marco)
+RABBITMQ_QUEUE_COURSE_CREATED=course.created.queue
+RABBITMQ_QUEUE_COURSE_DELETED=course.deleted.queue
+
+# User Management Queues - Da Gestione Utenti (Mauro)
+RABBITMQ_QUEUE_USER_CREATED=user.created.queue
+RABBITMQ_QUEUE_USER_UPDATED=user.updated.queue
+RABBITMQ_QUEUE_USER_DELETED=user.deleted.queue
+RABBITMQ_QUEUE_TEACHER_CREATED=teacher.created.queue
+RABBITMQ_QUEUE_STUDENT_CREATED=student.created.queue
+RABBITMQ_QUEUE_ROLE_ASSIGNED=role.assigned.queue
+
+# ===============================
+# CORS CONFIGURATION
+# ===============================
+CORS_ALLOWED_ORIGINS_ALL=*
+CORS_ALLOWED_ORIGINS_AG=*
+CORS_ALLOWED_ORIGINS_UR=http://localhost:3000,http://localhost:8080,http://localhost:8082
+CORS_ALLOWED_ORIGINS_AF=http://localhost:3000,http://localhost:8080,http://localhost:8081
+CORS_ALLOWED_METHODS=GET,POST,PUT,DELETE,OPTIONS
+CORS_ALLOWED_HEADERS=*
+CORS_ALLOW_CREDENTIALS=true
+CORS_MAX_AGE=3600
+
+# ===============================
+# JWT CONFIGURATION
+# ===============================
+JWT_PRIVATE_KEY=MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDVVtj2Q7e+XB9eMrVoB8kj2aTrh7eWwwmUO6WkYl4LteS9OXx5uYFL0WcPXIoPbum+VGzZYxQglcM7JyAB+2LtNAxlQoEGDmS01AeGldaJO1/9PiENr+whR5kYO2hfciquI4kiOyN+H9U/rUTKcVxZ0SIAgmFC3v3wKBACniplmADCzCJ3AqGJvfz9yliF4NBJacqnuP3CLK1zglWRh1ByZTAPqXUaczosRegWb3wrBhgjcGaot13m5cEfyobYL/FuGHI0quG5igZnwaZ25KbC2xHMKIDECWix/0zRckjJ2PK4KxKP7JLZWE6gVqD2EoRSAcEshe8Mk1pLPU78g4J9AgMBAAECggEAeXnjPo6eoJkKD3QmUV8li/FQ9AAqbIEQAkTYc7rDPD3NSmXiV9lmIwrQeTHDNzh7hjHCbSH6gvdj3FnR4u8GjHR3nmz41L77Xu/gfSTyrN+PL77hyU5j0StYpDCnpLl4TgHUAxbTheyQW5rIsdFMuaPYjZuv0AjzZX0aaLMxBvk1NOkD2SsEzIXkp/H6Zw/54wtZFBK0xOW3R6dUiG7nqU5IHYvnD/zzQ0DfT1sW9X4Re60keIrn6z7x5cebzpua9FnANaPzZKS91hDtPOwOooq7VTNWIyF8qpri4C0Q7MPhaEEDNXIXfn+c7YjjdktRgDQfIiGMe6En99IZhJi3TQKBgQDvhebek/RriBsqTpuxzapEUi0GECPdTz2xWmKEZvkAcxg5WiqYPyaYeXujTfexsc+x/61/dVFq5Sy+RyfvjaTt/NRQytCLZSzjFy6xvMr/u/jp85Pq9vAAyjz4f6ZraaE6Fv4pNFkC/vJ+u10BE6Ov48lWuAZzGmoueXrThHqRSwKBgQDkA9aWDLRQ3DIKfiC6yQSQZ3X7DwvrCB/nOh/PFRZnQ/NTgB3c60wPfl0swBwKixG7T2T5GBzkdI/8iWrldEU8LReQLLiVyCQ8kzqU3UUn2XP5yZfgLri/cm0fgnuySBXDJvIDmDmSKvSk6+XzHgyRBqtJYW3QqR+Tm02sHAEmVwKBgQDjnpQvoNr99XIbWmiLJ69PDejLgjsS7WLrT8GfoVuwGbBDkHQ6ColbDNd58XYZ36hIt3jhT1P4CaHjkStac3jw0PvTa2mTjqqBhF5Ted5P+QorCdbfy5t4pLgcTvKP0OnukjsmXSDZv/4igVt40nkThZyoVGmMqOWPFNKsf5Ea0QKBgBWaK31hzL+QbQlDc9RecRlBRBM6FLX6uhMNFbBn3gyAipARpkKk5DrfjPJNbRqunEpztixHVY1rYazaVA9TGbAe0YmuQvql0JEQnc82u3OQDYXPzJzHsGcq7x26HgABBlbL3MfsZx/rA+yQEOQcp7IhwJ6eJWpMa5pvb0dsC8vXAoGBAM6fgbtRqyzZBuywbAkq2Eu16JFcOnVvc9fRYLKZNKwV/ofoA2DDbMFg/PlzEJzl5tZm/cOx7G9GEkUdp/at3yjSCIiY3FhVxr+9n8TMerpj0dJGenjXLDRVLbMp97PHDSZEFPYAO9Qa5z8xnmpnK+5lwr/jx6987I6xLA5Xz0NI
+JWT_PUBLIC_KEY=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1VbY9kO3vlwfXjK1aAfJI9mk64e3lsMJlDulpGJeC7XkvTl8ebmBS9FnD1yKD27pvlRs2WMUIJXDOycgAfti7TQMZUKBBg5ktNQHhpXWiTtf/T4hDa/sIUeZGDtoX3IqriOJIjsjfh/VP61EynFcWdEiAIJhQt798CgQAp4qZZgAwswidwKhib38/cpYheDQSWnKp7j9wiytc4JVkYdQcmUwD6l1GnM6LEXoFm98KwYYI3BmqLdd5uXBH8qG2C/xbhhyNKrhuYoGZ8GmduSmwtsRzCiAxAlosf9M0XJIydjyuCsSj+yS2VhOoFag9hKEUgHBLIXvDJNaSz1O/IOCfQIDAQAB
+JWT_EXPIRATION=86400
+
+# ===============================
+# ACTUATOR CONFIGURATION
+# ===============================
+MANAGEMENT_ENDPOINTS_INCLUDE=health,info,metrics,env,beans,threaddump,logfile,heapdump
+MANAGEMENT_HEALTH_SHOW_DETAILS=always
+MANAGEMENT_GATEWAY_ACCESS=UNRESTRICTED
+
+# Gateway Public Endpoints
+GATEWAY_PUBLIC_ENDPOINTS=/api/v1/auth/login,/api/v1/auth/refresh-token,/api/v1/users/superadmin/init,/swagger-ui/**,/v3/api-docs/**,/webjars/**,/actuator/**,/api/*/actuator/**,/api/v1/*/v3/api-docs
+
+# ===============================
+# LOGGING CONFIGURATION
+# ===============================
+LOGGING_LEVEL_SECURITY=DEBUG
+LOGGING_LEVEL_SECURITY_OAUTH2=DEBUG
+LOGGING_LEVEL_ROOT=INFO
+LOGGING_LEVEL_CLOUD_GATEWAY=INFO
+LOGGING_LEVEL_APP=DEBUG
+LOGGING_LEVEL_NETTY=INFO
+LOGGING_PATTERN_CONSOLE=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level [%logger{36}] - %msg%n
+
+# ===============================
+# SWAGGER/OPENAPI CONFIGURATION
+# ===============================
+SWAGGER_API_DOCS_PATH=/v3/api-docs
+SWAGGER_UI_PATH=/swagger-ui.html
+SWAGGER_UI_OP_SORTER=method

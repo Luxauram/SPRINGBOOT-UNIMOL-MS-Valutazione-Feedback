@@ -1,0 +1,69 @@
+{
+  "id": "ed0b2beb-7bba-4844-8d22-d6b3faac3a80",
+  "values": [
+    {
+      "key": "API_GATEWAY_URL",
+      "value": "http://localhost:8080",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "MS_User_Role_URL",
+      "value": "http://localhost:8081",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "MS_Assessment_Feedback_URL",
+      "value": "http://localhost:8082",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "API_V1",
+      "value": "api/v1",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "MS-Ass-Fee-Username",
+      "value": "user",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "MS-Ass-Fee-Password",
+      "value": "",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "JWT_SADMIN",
+      "value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIwMDAwMDAiLCJpYXQiOjE3NTAwODk1NTcsImV4cCI6MTc1MDE3NTk1NywidXNlcm5hbWUiOiJzdXBlcmFkbWluIiwicm9sZSI6IlNVUEVSX0FETUlOIn0.KZ_tImN2alHT3VzXYiMc8WavvM8tlTWTd0fGK5EQ_7H2TU7rUYLsl4uffDv8Bstah3oj7PPkjdWp4P6OQ8JcbVaMQjWM4fAhi2zWYNhwRc_9XJSj66rFAmGlbZRJaedUEPwxl7-Q-v_SXKwYxpG765QORpJhaJZkmxsdra3gf9b9MDylOOR_lOPgUvxQbePZEZI-_VzCGcsj6Dt8B526mtqRuw2JGlzo3APZ9wZCZoIyJCNtkih8_SWbBMkXPFIQv6ZG6cwSkDNor8SxGsNowsqYpaJ1TCYCGXE5YbdoUS_fSaDFh9UGuDOWyyY2695r_uMm26yCPFFzhSAMQ6qTjQ",
+      "type": "any",
+      "enabled": true
+    },
+    {
+      "key": "JWT_ADMIN",
+      "value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1YTUyNmZlNi0yNTJlLTQ5NjctODkwMi1iOTkxMWYxOTg5MDYiLCJpYXQiOjE3NDk4MDc0MzIsImV4cCI6MTc0OTgxMTAzMiwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJBRE1JTiJ9.DHkFObk1fQ7A-OdbKgLN8E_R8BamX2efzLOKjmQwcCkTfdzG0ubWLjN8c6EKed2vgd8ivSR0E5RiwNpyCYsRlyBhCAkMstbvdpCP0m9Q142PVl7GzHO-_VnEQWwsVJK5kh-SFihFERjuef9WdmuKhEMjlrr4wLVvmbyPK9vSjJfwEG-H7NXuYCxqZCCdS7bR9amvXDz80KRz66szjN9_V6tJOvdbY3NAheKrky6MLOMWP608Gjba0tmJi58GQNYdzIzfBZ9XJMQIxOefYugmghQ8vnccAiy-ynWwUGQzLg8y_kCL8fMr_C762SIdmplfTKwr_Z9ZRGEGoxlxT2I2Aw",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "JWT_TEACHER",
+      "value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJmNTAzMzBmOC1jOWM5LTRjZmItOTI1ZS00NGViMjI5NTU2NTIiLCJpYXQiOjE3NTAwOTU0MjIsImV4cCI6MTc1MDE4MTgyMiwidXNlcm5hbWUiOiJ0ZWFjaGVyIiwicm9sZSI6IlRFQUNIRVIifQ.MmPg_4Cs3X56gqBZQUxZWvxNtiVzyWxpQFpHb8ZURT0ZOV3y9aZnWAyo3IUwS0DBaQLZL-CeA3Oehvv2mKIwIzBQuFH0AXrMlNMxVaPzb1XvZtCfT4xotYiQNMrSOx97qwe7ydUcIRa26zNKpESOBcZtB4OuR0E8zVA4ce0OXd7UUsArOMkqAsPBcsad4yAeNBvLFHhkECyqbq52jxTSXu-5P5q3VqA1mEwKBUOhZRyo7HCu4laizxVcChf0dzg-wBtbFV5rxNe3ZTDkEcf2R_X17lJ5CiLStK6auwznLzHXTXIbIQajekpBSfXwufqaEMQzNEWchGcL--vjMb26gA",
+      "type": "default",
+      "enabled": true
+    },
+    {
+      "key": "JWT_STUDENT",
+      "value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI3YTQ1YmJlNy1lOWNiLTRjMzktYjYzZC0yZDcwMDI4ODI1MjQiLCJpYXQiOjE3NDk5MjY4NDIsImV4cCI6MTc1MDAxMzI0MiwidXNlcm5hbWUiOiJzdHVkZW50ZSIsInJvbGUiOiJTVFVERU5UIn0.LJ4vMK_8nVGp8WNGMg2-DpGQL1QB96FYoPNbn23qp-V26XTu63EX2Fw-KbQ-acxpvIOmtHvvqJv0Zj1OE3ZORIwUG0hFcw3mcbk1Lhy6oZ5DlaRDXwYMhth0Ap5SJ4mUP_EIiFHUU33CSRvRB17-67DqbP1g9qvKakKnvet9sq24m5fQv0xSyqJk9VfuJy1j-EUiuWWesnmrORcwxrR4-GphvHtPYGqPKBDa64t-4ZB3NJSZPmq8D7f_K93I-Sozb8BZ5TlUTfda_X16CLDBfZUsOEap1LjdwObixz_yReZ9uGLYyf8rsd3wfenmEJkn8fmtlh1u4URedSoH8x8YZA",
+      "type": "default",
+      "enabled": true
+    }
+  ],
+  "name": "Globals",
+  "_postman_variable_scope": "globals",
+  "_postman_exported_at": "2025-06-17T18:02:08.617Z",
+  "_postman_exported_using": "Postman/11.49.4"
+}

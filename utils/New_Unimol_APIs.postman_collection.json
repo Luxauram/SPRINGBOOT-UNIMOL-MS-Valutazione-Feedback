@@ -1,0 +1,5263 @@
+{
+  "info": {
+    "_postman_id": "bd40aedb-26a6-4dee-b45a-027ed0f57a24",
+    "name": "New_Unimol_APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26911797",
+    "_collection_link": "https://newunimolteam.postman.co/workspace/NEW_UNIMOL~8b8846ab-9daa-4d6b-964d-93180601c401/collection/26911797-bd40aedb-26a6-4dee-b45a-027ed0f57a24?action=share&source=collection_link&creator=26911797"
+  },
+  "item": [
+    {
+      "name": "API-GATEWAY",
+      "item": [
+        {
+          "name": "Actuators",
+          "item": [
+            {
+              "name": "Health Check AG",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/actuator/health",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "health"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Health Check UR",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/api/user-service/actuator/health",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "user-service",
+                    "actuator",
+                    "health"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Health Check AF",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/api/assessment-service/actuator/health",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "assessment-service",
+                    "actuator",
+                    "health"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Info",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/actuator/info",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "info"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Metrics",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/actuator/metrics",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "metrics"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Env",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/actuator/env",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "env"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Beans",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/actuator/beans",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "beans"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "ThreadDump",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/actuator/threaddump",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "threaddump"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "LogFile",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/actuator/logfile",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "logfile"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "HeapDump",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/actuator/heapdump",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "heapdump"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "User API-GATEWAY",
+          "item": [
+            {
+              "name": "Create SuperAdmin (Initial)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"superadmin\",\n    \"email\": \"superadmin@mail.com\",\n    \"name\": \"Carmine\",\n    \"surname\": \"Antonio\",\n    \"password\": \"password\",\n    \"roleId\": \"SUPER_ADMIN\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users/superadmin/init",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    "superadmin",
+                    "init"
+                  ]
+                },
+                "description": "Crea il primo SuperAdmin del sistema se non esiste già. Endpoint pubblico."
+              },
+              "response": []
+            },
+            {
+              "name": "Creazione Nuovo Admin",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"username\": \"admin\",\r\n    \"email\": \"admin@mail.com\",\r\n    \"name\": \"Marcellone\",\r\n    \"surname\": \"Pastorone\",\r\n    \"password\": \"password\",\r\n    \"roleId\": \"ADMIN\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Crea Nuovo Teacher",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"teacher\",\n    \"email\": \"teacher@mail.com\",\n    \"name\": \"Simonone\",\n    \"surname\": \"Scalabrone\",\n    \"password\": \"password\",\n    \"roleId\": \"TEACHER\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users"
+                  ]
+                },
+                "description": "Crea un nuovo utente nel sistema. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Create New User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"studente\",\n    \"email\": \"studente@mail.com\",\n    \"name\": \"Maurone\",\n    \"surname\": \"Cavasinni\",\n    \"password\": \"password\",\n    \"roleId\": \"STUDENT\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users"
+                  ]
+                },
+                "description": "Crea un nuovo utente nel sistema. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Get All Users",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users"
+                  ]
+                },
+                "description": "Restituisce la lista di tutti gli utenti. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Get User by ID",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users/:userId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    ":userId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Restituisce i dettagli di un utente specifico. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Update User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"studente\",\n    \"email\": \"studente@mail.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users/:userId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    ":userId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Aggiorna i dati di un utente esistente. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Delete User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}",
+                    "description": "Token JWT valido (richiede ruolo ADMIN)",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users/:userId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    ":userId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": ""
+                    }
+                  ]
+                },
+                "description": "Elimina un utente dal sistema. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Get Current User Profile",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users/profile",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    "profile"
+                  ]
+                },
+                "description": "Restituisce il profilo dell'utente autenticato."
+              },
+              "response": []
+            },
+            {
+              "name": "Update Current User Profile",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"studente1\",\n    \"name\": \"Mauro\",\n    \"surname\": \"Pesce\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users/profile",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    "profile"
+                  ]
+                },
+                "description": "Aggiorna il profilo dell'utente autenticato."
+              },
+              "response": []
+            },
+            {
+              "name": "Change Password",
+              "request": {
+                "auth": {
+                  "type": "jwt",
+                  "jwt": [
+                    {
+                      "key": "algorithm",
+                      "value": "HS256",
+                      "type": "string"
+                    },
+                    {
+                      "key": "isSecretBase64Encoded",
+                      "value": false,
+                      "type": "boolean"
+                    },
+                    {
+                      "key": "payload",
+                      "value": "{}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "addTokenTo",
+                      "value": "header",
+                      "type": "string"
+                    },
+                    {
+                      "key": "headerPrefix",
+                      "value": "Bearer",
+                      "type": "string"
+                    },
+                    {
+                      "key": "queryParamKey",
+                      "value": "token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "header",
+                      "value": "{}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}",
+                    "description": "Token JWT valido",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"currentPassword\": \"password\",\n    \"newPassword\": \"password2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users/change-password",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    "change-password"
+                  ]
+                },
+                "description": "Cambia la password dell'utente corrente."
+              },
+              "response": []
+            },
+            {
+              "name": "Reset Password",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"currentPassword\": \"currentPassword\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users/reset-password",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    "reset-password"
+                  ]
+                },
+                "description": "Resetta la password dell'utente corrente a una temporanea."
+              },
+              "response": []
+            },
+            {
+              "name": "Assign Role to User (via User ID)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"roleId\": \"ADMIN\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users/:userId/roles",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    ":userId",
+                    "roles"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Assegna un ruolo specifico a un utente. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Update User Role (via User ID)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"roleId\": \"TEACHER\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/users/:userId/roles",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    ":userId",
+                    "roles"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Aggiorna il ruolo di un utente. Richiede privilegi di amministratore."
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Role API-GATEWAY",
+          "item": [
+            {
+              "name": "Get All Roles",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/roles",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "roles"
+                  ]
+                },
+                "description": "Restituisce la lista di tutti i ruoli disponibili. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Get Role by ID",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/roles/:roleId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "roles",
+                    ":roleId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "roleId",
+                      "value": "TEACHER"
+                    }
+                  ]
+                },
+                "description": "Restituisce i dettagli di un ruolo specifico. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Assign Role to User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}",
+                    "description": "Token JWT valido (richiede ruolo SUPER_ADMIN)",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"roleId\": \"TEACHER\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/roles/assign/:userId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "roles",
+                    "assign",
+                    ":userId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Assegna un ruolo specifico a un utente. Richiede privilegi di super amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Remove Role from User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/roles/remove/:userId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "roles",
+                    "remove",
+                    ":userId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Rimuove il ruolo assegnato a un utente. Richiede privilegi di super amministratore."
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Auth API-GATEWAY",
+          "item": [
+            {
+              "name": "Login SuperAdmin",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"username\": \"superadmin\",\r\n    \"password\": \"password\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/auth/login",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Login Admin",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/auth/login",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "login"
+                  ]
+                },
+                "description": "Effettua il login di un utente e restituisce un token JWT per l'autenticazione"
+              },
+              "response": []
+            },
+            {
+              "name": "Login Teacher",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"teacher\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/auth/login",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "login"
+                  ]
+                },
+                "description": "Effettua il login di un utente e restituisce un token JWT per l'autenticazione"
+              },
+              "response": []
+            },
+            {
+              "name": "Login User",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"studente\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/auth/login",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "login"
+                  ]
+                },
+                "description": "Effettua il login di un utente e restituisce un token JWT per l'autenticazione"
+              },
+              "response": []
+            },
+            {
+              "name": "Logout User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/auth/logout",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "logout"
+                  ]
+                },
+                "description": "Invalida il token JWT dell'utente"
+              },
+              "response": []
+            },
+            {
+              "name": "Refresh Token",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/auth/refresh-token",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "refresh-token"
+                  ]
+                },
+                "description": "Genera un nuovo token JWT a partire da uno esistente"
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Assessment API-GATEWAY",
+          "item": [
+            {
+              "name": "Ottieni tutte le valutazioni (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/assessments",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments"
+                  ]
+                },
+                "description": "Ottieni tutte le valutazioni (accessibili a TEACHER, ADMIN e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazione tramite ID (S || T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/assessments/:assessmentId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    ":assessmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "assessmentId",
+                      "value": "56a96e99-20ea-4c03-8a08-e84b2013a71e"
+                    }
+                  ]
+                },
+                "description": "Ottiene una specifica valutazione tramite il suo ID (accessibile a STUDENT per le proprie, TEACHER, ADMIN e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazioni per Compito (Assignment) (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/assessments/assignment/:assignmentId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "assignment",
+                    ":assignmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "assignmentId",
+                      "value": "56a96e99-20ea-4c03-8a08-e84b2013a71e"
+                    }
+                  ]
+                },
+                "description": "Ottiene tutte le valutazioni per uno specifico compito (accessibili a TEACHER, ADMIN e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazioni per Esame (Exam) (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/assessments/exam/:examId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "exam",
+                    ":examId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "examId",
+                      "value": "1234"
+                    }
+                  ]
+                },
+                "description": "Ottiene tutte le valutazioni per uno specifico esame (accessibili a TEACHER, ADMIN e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazioni per Studente (S || T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/assessments/student/:studentId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "student",
+                    ":studentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "studentId",
+                      "value": "49fd40ca-de42-41db-9970-00c6581fbb50"
+                    }
+                  ]
+                },
+                "description": "Ottiene tutte le valutazioni per uno specifico studente (accessibili a TEACHER, ADMIN, SUPER_ADMIN, o a STUDENT per se stesso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazioni per Corso (S || T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/assessments/course/:courseId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "course",
+                    ":courseId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "courseId",
+                      "value": "1234"
+                    }
+                  ]
+                },
+                "description": "Ottiene tutte le valutazioni per uno specifico corso (accessibili a TEACHER, ADMIN, SUPER_ADMIN, o a STUDENT iscritto al corso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazioni personali (S)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_STUDENT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/assessments/personal",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "personal"
+                  ]
+                },
+                "description": "Ottiene tutte le valutazioni per lo studente autenticato (accessibili a STUDENT e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni dettagli valutazione personale tramite ID (S || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_STUDENT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/assessments/personal/:personalAssessmentId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "personal",
+                    ":personalAssessmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "personalAssessmentId",
+                      "value": "49fd40ca-de42-41db-9970-00c6581fbb50"
+                    }
+                  ]
+                },
+                "description": "Ottieni dettagli di una specifica valutazione per lo studente autenticato (accessibili a STUDENT per le proprie, e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Crea valutazione (T || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"referenceId\": \"12345ffddfdffrrrfff\",\n    \"referenceType\": \"EXAM\",\n    \"studentId\": \"b9a327ff-1654-4ff9-bf03-9f7bb5d12894\",\n    \"teacherId\": \"3ca90e54-f53b-4859-98fc-d2e3be9ff3c6\",\n    \"score\": 28.5,\n    \"assessmentDate\": \"2024-03-15T10:30:00\",\n    \"notes\": \"Ottimo lavoro sul compito, attenzione ai dettagli.\",\n    \"courseId\": \"12345\"  \n}"
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/assessments",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments"
+                  ]
+                },
+                "description": "Crea una nuova valutazione (accessibile a TEACHER e SUPER_ADMIN). Il `teacherId` viene estratto dal token JWT o dagli attributi della richiesta."
+              },
+              "response": []
+            },
+            {
+              "name": "Aggiorna valutazione (T || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n        \"referenceId\": \"ReferenceId richiesto\",\n        \"referenceType\": \"EXAM\",\n        \"studentId\": \"b9a327ff-1654-4ff9-bf03-9f7bb5d12894\",\n        \"teacherId\": \"3ca90e54-f53b-4859-98fc-d2e3be9ff3c6\",\n        \"score\": 20,\n        \"assessmentDate\": \"2025-06-15T12:13:43.281343\",\n        \"notes\": \"Aggiornato non proprio Ottimo lavoro sul compito, attenzione ai dettagli.\",\n        \"courseId\": \"1234\"\n}"
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/assessments/:assessmentId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    ":assessmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "assessmentId",
+                      "value": "9dd381a0-4970-4808-8033-3b323aade216"
+                    }
+                  ]
+                },
+                "description": "Aggiorna una valutazione esistente (accessibile a TEACHER e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Elimina valutazione (T || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/assessments/:assessmentId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    ":assessmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "assessmentId",
+                      "value": "9dd381a0-4970-4808-8033-3b323aade216"
+                    }
+                  ]
+                },
+                "description": "Elimina una valutazione (accessibile a TEACHER e SUPER_ADMIN)."
+              },
+              "response": []
+            }
+          ],
+          "description": "Endpoint per la gestione delle Valutazioni (Assessment)"
+        },
+        {
+          "name": "Detailed Feedback API-GATEWAY",
+          "item": [
+            {
+              "name": "Ottieni tutti i feedback (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/feedback",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback"
+                  ]
+                },
+                "description": "Recupera tutte le voci di feedback per una specifica valutazione. Accessibile a studenti, docenti e admin."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni feedback tramite ID della valutazione (S || T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/feedback/assessment/:assessmentId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback",
+                    "assessment",
+                    ":assessmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "assessmentId",
+                      "value": "9d017b9f-a2d0-4e32-b46c-9655eac76101"
+                    }
+                  ]
+                },
+                "description": "Recupera tutte le voci di feedback per una specifica valutazione. Accessibile a studenti, docenti e admin."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni feedback tramite ID (S || T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/feedback/:feedbackId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback",
+                    ":feedbackId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "feedbackId",
+                      "value": "1525edee-6e0b-4990-a995-18015ab5bb25"
+                    }
+                  ]
+                },
+                "description": "Recupera una specifica voce di feedback tramite il suo ID. Accessibile a studenti, docenti e admin."
+              },
+              "response": []
+            },
+            {
+              "name": "Crea un feedback (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"assessmentId\": \"9d017b9f-a2d0-4e32-b46c-9655eac76101\",\n    \"feedbackText\": \"UP2 Propongo più ciambelle gratis durante il corso!\",\n    \"category\": \"OTHER\",\n    \"strengths\": \"Unico punto di forza è che la pummarola è ncopp\",\n    \"improvementAreas\": \"Unica area dove migliorare: la dizione italiana\"\n}"
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/feedback",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback"
+                  ]
+                },
+                "description": "Crea una nuova voce di feedback. Richiede ruolo TEACHER, ADMIN o SUPER_ADMIN."
+              },
+              "response": []
+            },
+            {
+              "name": "Aggiorna un feedback (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"assessmentId\": \"9d017b9f-a2d0-4e32-b46c-9655eac76101\",\n    \"feedbackText\": \"AGGIORNATO che voglio ancora più ciambelle gratis durante il corso!\",\n    \"category\": \"OTHER\",\n    \"strengths\": \"AGGIORNATO molta pummarol ncopp\",\n    \"improvementAreas\": \"Eccert e chiar!\"\n}"
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/feedback/:feedbackId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback",
+                    ":feedbackId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "feedbackId",
+                      "value": "1525edee-6e0b-4990-a995-18015ab5bb25"
+                    }
+                  ]
+                },
+                "description": "Aggiorna una voce di feedback esistente. Richiede ruolo TEACHER, ADMIN o SUPER_ADMIN."
+              },
+              "response": []
+            },
+            {
+              "name": "Elimina un feedback (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/feedback/:feedbackId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback",
+                    ":feedbackId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "feedbackId",
+                      "value": "7ead8d5d-3548-4c77-822b-c21480e54f0b"
+                    }
+                  ]
+                },
+                "description": "Elimina una voce di feedback. Richiede ruolo TEACHER, ADMIN o SUPER_ADMIN."
+              },
+              "response": []
+            }
+          ],
+          "description": "Endpoint per la gestione del DetailedFeedback (Feedback)"
+        },
+        {
+          "name": "Teacher Survey API-GATEWAY",
+          "item": [
+            {
+              "name": "Ottieni tutti i questionari (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/teacher-surveys",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys"
+                  ]
+                },
+                "description": "Recupera tutti i questionari di valutazione docenti (solo amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni questionario per ID (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/teacher-surveys/:surveyId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    ":surveyId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "84e9b894-027d-4660-bca4-31b58daa0070"
+                    }
+                  ]
+                },
+                "description": "Recupera un questionario specifico tramite ID (accessibile a TEACHER, ADMIN, SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni questionari per corso (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/teacher-surveys/course/:courseId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    "course",
+                    ":courseId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "courseId",
+                      "value": "1238cffc"
+                    }
+                  ]
+                },
+                "description": "Recupera tutti i questionari associati a un corso specifico (accessibile a TEACHER, ADMIN, SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni questionari attivi (S || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/teacher-surveys/active",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    "active"
+                  ]
+                },
+                "description": "Recupera tutti i questionari attivi disponibili per la compilazione (accessibile a STUDENT, ADMIN, SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni risultati questionario (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/teacher-surveys/:surveyId/results",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    ":surveyId",
+                    "results"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "84e9b894-027d-4660-bca4-31b58daa0070"
+                    }
+                  ]
+                },
+                "description": "Recupera i risultati statistici di un questionario completato (solo docente proprietario o amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Crea nuovo questionario (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"courseId\": \"1238cfcccfc\",\n    \"teacherId\": \"3ca90e54-f53b-4859-98fc-d2e3be9ff3c6\",\n    \"academicYear\": \"2024-2025\",\n    \"semester\": 1,\n    \"status\": \"ACTIVE\",\n    \"creationDate\": \"2023-01-10T09:00:00Z\",\n    \"closingDate\": \"2023-01-30T23:59:59Z\",\n    \"title\": \"Questionario Valutazione Insegnamento Matematica I\",\n    \"description\": \"Valutazione dell'insegnamento di Matematica I tenuto dal Prof. Rossi.\",\n    \"questions\": [\n        {\n            \"questionText\": \"Chiarezza della spiegazione?\", \n            \"questionType\": \"RATING\",\n            \"minRating\": 1,   \n            \"maxRating\": 5\n        },\n        {\n            \"questionText\": \"Disponibilità del docente?\", \n            \"questionType\": \"RATING\",\n            \"minRating\": 1,   \n            \"maxRating\": 5\n        },\n        {\n            \"questionText\": \"Suggerimenti per migliorare il corso.\", \n            \"questionType\": \"TEXT\",\n            \"maxLengthText\": 500\n        }\n    ]\n}"
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/teacher-surveys",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys"
+                  ]
+                },
+                "description": "Crea un nuovo questionario di valutazione per un docente (solo amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Aggiorna questionario (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"courseId\": \"1238cffc\",\n    \"teacherId\": \"3ca90e54-f53b-4859-98fc-d2e3be9ff3c6\",\n    \"academicYear\": \"2024-2025\",\n    \"semester\": 1,\n    \"status\": \"DRAFT\",\n    \"creationDate\": \"2023-01-10T09:00:00Z\",\n    \"closingDate\": \"2023-01-30T23:59:59Z\",\n    \"title\": \"AGGIORNATO: Questionario Valutazione Insegnamento Matematica I\",\n    \"description\": \"AGGIORNATO: Valutazione dell'insegnamento di Matematica I tenuto dal Prof. Rossi.\",\n    \"questions\": [\n        {\n            \"questionText\": \"AGGIORNATO: Chiarezza della spiegazione?\", \n            \"questionType\": \"RATING\",\n            \"minRating\": 1,   \n            \"maxRating\": 5\n        },\n        {\n            \"questionText\": \"AGGIORNATO: Disponibilità del docente?\", \n            \"questionType\": \"RATING\",\n            \"minRating\": 1,   \n            \"maxRating\": 5\n        },\n        {\n            \"questionText\": \"AGGIORNATO: Suggerimenti per migliorare il corso.\", \n            \"questionType\": \"TEXT\",\n            \"maxLengthText\": 500\n        }\n    ]\n}"
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/teacher-surveys/:surveyId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    ":surveyId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "84e9b894-027d-4660-bca4-31b58daa0070"
+                    }
+                  ]
+                },
+                "description": "Aggiorna un questionario di valutazione esistente (solo amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Modifica stato questionario (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/teacher-surveys/:surveyId/status?status=ACTIVE",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    ":surveyId",
+                    "status"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "ACTIVE",
+                      "description": "ACTIVE oppure CLOSED"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "8734d370-3351-4cc0-8a29-c6733cbe69f9"
+                    }
+                  ]
+                },
+                "description": "Cambia lo stato di un questionario (DRAFT/ACTIVE/CLOSED) (solo amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Elimina questionario (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/teacher-surveys/:surveyId",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    ":surveyId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "4c109169-9615-49a5-bd5c-e6792d90e950"
+                    }
+                  ]
+                },
+                "description": "Elimina un questionario di valutazione (solo se non ha risposte e solo amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni statistiche generali (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/teacher-surveys/statistics",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    "statistics"
+                  ]
+                },
+                "description": "Recupera statistiche generali sui questionari del sistema (solo amministratori)."
+              },
+              "response": []
+            }
+          ],
+          "description": "Endpoint per la gestione dei Questionari di Valutazione Docenti"
+        },
+        {
+          "name": "Survey Response API-GATEWAY",
+          "item": [
+            {
+              "name": "Ottieni risposte tramite ID questionario (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/surveys/:surveyId/responses",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    ":surveyId",
+                    "responses"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "8734d370-3351-4cc0-8a29-c6733cbe69f9"
+                    }
+                  ]
+                },
+                "description": "Recupera tutte le risposte per un questionario specifico (solo docenti del corso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni commenti del questionario (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/surveys/:surveyId/comments",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    ":surveyId",
+                    "comments"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "8734d370-3351-4cc0-8a29-c6733cbe69f9"
+                    }
+                  ]
+                },
+                "description": "Recupera tutti i commenti per un questionario specifico (solo docenti del corso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni risultati aggregati del questionario (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/surveys/:surveyId/results",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    ":surveyId",
+                    "results"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "8734d370-3351-4cc0-8a29-c6733cbe69f9"
+                    }
+                  ]
+                },
+                "description": "Recupera risultati aggregati per un questionario specifico (solo docenti del corso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Invia le risposte del questionario (S || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_STUDENT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n    {\n        \"surveyId\": \"8734d370-3351-4cc0-8a29-c6733cbe69f9\",\n        \"studentId\": \"bed1d651-71ef-4297-9eff-7212a9ec7d1b\",\n        \"questionId\": \"cifffjeo3\",\n        \"numericRating\": 3,\n        \"textComment\": \"Uè uagliò bell stu rllog\",\n        \"submissionDate\": \"2024-03-15T14:00:00\"\n    },\n    {\n        \"surveyId\": \"8734d370-3351-4cc0-8a29-c6733cbe69f9\",\n        \"studentId\": \"bed1d651-71ef-4297-9eff-7212a9ec7d1b\",\n        \"questionId\": \"cifjffeo3\",\n        \"numericRating\": 5,\n        \"textComment\": \"Uè uagliò bell stu rllog 2.0\",\n        \"submissionDate\": \"2024-03-15T14:00:00\"\n    }\n]"
+                },
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/surveys/:surveyId/responses",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    ":surveyId",
+                    "responses"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "8734d370-3351-4cc0-8a29-c6733cbe69f9"
+                    }
+                  ]
+                },
+                "description": "Invia multiple risposte per un questionario specifico (solo studenti iscritti al corso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni le mie risposte ai questionari (S || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_STUDENT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/surveys/my-responses",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    "my-responses"
+                  ]
+                },
+                "description": "Recupera tutte le risposte inviate dall'utente autenticato (solo studenti e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni questionari disponibili (S || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{API_GATEWAY_URL}}/{{API_V1}}/surveys/available",
+                  "host": [
+                    "{{API_GATEWAY_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    "available"
+                  ]
+                },
+                "description": "Recupera tutti i questionari attivi per i corsi a cui lo studente è iscritto (solo studenti e SUPER_ADMIN)."
+              },
+              "response": []
+            }
+          ],
+          "description": "Endpoint per la gestione delle Risposte ai Questionari"
+        }
+      ]
+    },
+    {
+      "name": "MS-User-Role",
+      "item": [
+        {
+          "name": "Actuators",
+          "item": [
+            {
+              "name": "Health Check",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/actuator/health",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "health"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Info",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/actuator/info",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "info"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Metrics",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/actuator/metrics",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "metrics"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Env",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/actuator/env",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "env"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Beans",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/actuator/beans",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "beans"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "ThreadDump",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/actuator/threaddump",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "threaddump"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "LogFile",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/actuator/logfile",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "logfile"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "HeapDump",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{SpringBootUsername}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{SpringBootPassword}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/actuator/heapdump",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "heapdump"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "User API",
+          "item": [
+            {
+              "name": "Create SuperAdmin (Initial)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"superadmin\",\n    \"email\": \"superadmin@mail.com\",\n    \"name\": \"Carmine\",\n    \"surname\": \"Antonio\",\n    \"password\": \"password\",\n    \"roleId\": \"SUPER_ADMIN\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users/superadmin/init",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    "superadmin",
+                    "init"
+                  ]
+                },
+                "description": "Crea il primo SuperAdmin del sistema se non esiste già. Endpoint pubblico."
+              },
+              "response": []
+            },
+            {
+              "name": "Creazione Nuovo Admin",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"username\": \"admin\",\r\n    \"email\": \"admin@mail.com\",\r\n    \"name\": \"Marcellone\",\r\n    \"surname\": \"Pastorone\",\r\n    \"password\": \"password\",\r\n    \"roleId\": \"ADMIN\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Crea Nuovo Teacher",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"teacher\",\n    \"email\": \"teacher@mail.com\",\n    \"name\": \"Simonone\",\n    \"surname\": \"Scalabrone\",\n    \"password\": \"password\",\n    \"roleId\": \"TEACHER\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users"
+                  ]
+                },
+                "description": "Crea un nuovo utente nel sistema. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Create New User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"studente\",\n    \"email\": \"studente@mail.com\",\n    \"name\": \"Maurone\",\n    \"surname\": \"Cavasinni\",\n    \"password\": \"password\",\n    \"roleId\": \"STUDENT\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users"
+                  ]
+                },
+                "description": "Crea un nuovo utente nel sistema. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Get All Users",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users"
+                  ]
+                },
+                "description": "Restituisce la lista di tutti gli utenti. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Get User by ID",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users/:userId",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    ":userId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Restituisce i dettagli di un utente specifico. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Update User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"studente\",\n    \"email\": \"studente@mail.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users/:userId",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    ":userId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Aggiorna i dati di un utente esistente. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Delete User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}",
+                    "description": "Token JWT valido (richiede ruolo ADMIN)",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users/:userId",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    ":userId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": ""
+                    }
+                  ]
+                },
+                "description": "Elimina un utente dal sistema. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Get Current User Profile",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users/profile",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    "profile"
+                  ]
+                },
+                "description": "Restituisce il profilo dell'utente autenticato."
+              },
+              "response": []
+            },
+            {
+              "name": "Update Current User Profile",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"studente1\",\n    \"name\": \"Mauro\",\n    \"surname\": \"Pesce\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users/profile",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    "profile"
+                  ]
+                },
+                "description": "Aggiorna il profilo dell'utente autenticato."
+              },
+              "response": []
+            },
+            {
+              "name": "Change Password",
+              "request": {
+                "auth": {
+                  "type": "jwt",
+                  "jwt": [
+                    {
+                      "key": "algorithm",
+                      "value": "HS256",
+                      "type": "string"
+                    },
+                    {
+                      "key": "isSecretBase64Encoded",
+                      "value": false,
+                      "type": "boolean"
+                    },
+                    {
+                      "key": "payload",
+                      "value": "{}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "addTokenTo",
+                      "value": "header",
+                      "type": "string"
+                    },
+                    {
+                      "key": "headerPrefix",
+                      "value": "Bearer",
+                      "type": "string"
+                    },
+                    {
+                      "key": "queryParamKey",
+                      "value": "token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "header",
+                      "value": "{}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}",
+                    "description": "Token JWT valido",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"currentPassword\": \"password\",\n    \"newPassword\": \"password2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users/change-password",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    "change-password"
+                  ]
+                },
+                "description": "Cambia la password dell'utente corrente."
+              },
+              "response": []
+            },
+            {
+              "name": "Reset Password",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"currentPassword\": \"currentPassword\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users/reset-password",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    "reset-password"
+                  ]
+                },
+                "description": "Resetta la password dell'utente corrente a una temporanea."
+              },
+              "response": []
+            },
+            {
+              "name": "Assign Role to User (via User ID)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"roleId\": \"ADMIN\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users/:userId/roles",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    ":userId",
+                    "roles"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Assegna un ruolo specifico a un utente. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Update User Role (via User ID)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"roleId\": \"TEACHER\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/users/:userId/roles",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "users",
+                    ":userId",
+                    "roles"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Aggiorna il ruolo di un utente. Richiede privilegi di amministratore."
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Role API",
+          "item": [
+            {
+              "name": "Get All Roles",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/roles",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "roles"
+                  ]
+                },
+                "description": "Restituisce la lista di tutti i ruoli disponibili. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Get Role by ID",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/roles/:roleId",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "roles",
+                    ":roleId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "roleId",
+                      "value": "TEACHER"
+                    }
+                  ]
+                },
+                "description": "Restituisce i dettagli di un ruolo specifico. Richiede privilegi di amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Assign Role to User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer {{token}}",
+                    "description": "Token JWT valido (richiede ruolo SUPER_ADMIN)",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"roleId\": \"TEACHER\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/roles/assign/:userId",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "roles",
+                    "assign",
+                    ":userId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Assegna un ruolo specifico a un utente. Richiede privilegi di super amministratore."
+              },
+              "response": []
+            },
+            {
+              "name": "Remove Role from User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/roles/remove/:userId",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "roles",
+                    "remove",
+                    ":userId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "userId",
+                      "value": "497a5742-c7b2-4ab1-972d-acd38e5441d6"
+                    }
+                  ]
+                },
+                "description": "Rimuove il ruolo assegnato a un utente. Richiede privilegi di super amministratore."
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Auth API",
+          "item": [
+            {
+              "name": "Login SuperAdmin",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"username\": \"superadmin\",\r\n    \"password\": \"password\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/auth/login",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Login Admin",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/auth/login",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "login"
+                  ]
+                },
+                "description": "Effettua il login di un utente e restituisce un token JWT per l'autenticazione"
+              },
+              "response": []
+            },
+            {
+              "name": "Login Teacher",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"teacher\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/auth/login",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "login"
+                  ]
+                },
+                "description": "Effettua il login di un utente e restituisce un token JWT per l'autenticazione"
+              },
+              "response": []
+            },
+            {
+              "name": "Login User",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"studente\",\n    \"password\": \"password\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/auth/login",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "login"
+                  ]
+                },
+                "description": "Effettua il login di un utente e restituisce un token JWT per l'autenticazione"
+              },
+              "response": []
+            },
+            {
+              "name": "Logout User",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/auth/logout",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "logout"
+                  ]
+                },
+                "description": "Invalida il token JWT dell'utente"
+              },
+              "response": []
+            },
+            {
+              "name": "Refresh Token",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_User_Role_URL}}/{{API_V1}}/auth/refresh-token",
+                  "host": [
+                    "{{MS_User_Role_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "auth",
+                    "refresh-token"
+                  ]
+                },
+                "description": "Genera un nuovo token JWT a partire da uno esistente"
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MS-Assessment-Feedback",
+      "item": [
+        {
+          "name": "Actuators",
+          "item": [
+            {
+              "name": "Health Check",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "password",
+                      "value": "{{MS-Ass-Fee-Password}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "username",
+                      "value": "{{MS-Ass-Fee-Username}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/actuator/health",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "health"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Info",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "password",
+                      "value": "{{MS-Ass-Fee-Password}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "username",
+                      "value": "{{MS-Ass-Fee-Username}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/actuator/info",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "info"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Metrics",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{MS-Ass-Fee-Username}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{MS-Ass-Fee-Password}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/actuator/metrics",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "metrics"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Env",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "password",
+                      "value": "{{MS-Ass-Fee-Password}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "username",
+                      "value": "{{MS-Ass-Fee-Username}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/actuator/env",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "env"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Beans",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{MS-Ass-Fee-Username}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{MS-Ass-Fee-Password}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/actuator/beans",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "beans"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "ThreadDump",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "password",
+                      "value": "{{MS-Ass-Fee-Password}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "username",
+                      "value": "{{MS-Ass-Fee-Username}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/actuator/threaddump",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "threaddump"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "LogFile",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "username",
+                      "value": "{{MS-Ass-Fee-Username}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "password",
+                      "value": "{{MS-Ass-Fee-Password}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/actuator/logfile",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "logfile"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "HeapDump",
+              "request": {
+                "auth": {
+                  "type": "basic",
+                  "basic": [
+                    {
+                      "key": "password",
+                      "value": "{{MS-Ass-Fee-Password}}",
+                      "type": "string"
+                    },
+                    {
+                      "key": "username",
+                      "value": "{{MS-Ass-Fee-Username}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/actuator/heapdump",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "actuator",
+                    "heapdump"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Assessment API",
+          "item": [
+            {
+              "name": "Ottieni tutte le valutazioni (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/assessments",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments"
+                  ]
+                },
+                "description": "Ottieni tutte le valutazioni (accessibili a TEACHER, ADMIN e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazione tramite ID (S || T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/assessments/:assessmentId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    ":assessmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "assessmentId",
+                      "value": "56a96e99-20ea-4c03-8a08-e84b2013a71e"
+                    }
+                  ]
+                },
+                "description": "Ottiene una specifica valutazione tramite il suo ID (accessibile a STUDENT per le proprie, TEACHER, ADMIN e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazioni per Compito (Assignment) (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/assessments/assignment/:assignmentId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "assignment",
+                    ":assignmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "assignmentId",
+                      "value": "56a96e99-20ea-4c03-8a08-e84b2013a71e"
+                    }
+                  ]
+                },
+                "description": "Ottiene tutte le valutazioni per uno specifico compito (accessibili a TEACHER, ADMIN e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazioni per Esame (Exam) (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/assessments/exam/:examId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "exam",
+                    ":examId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "examId",
+                      "value": "123"
+                    }
+                  ]
+                },
+                "description": "Ottiene tutte le valutazioni per uno specifico esame (accessibili a TEACHER, ADMIN e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazioni per Studente (S || T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/assessments/student/:studentId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "student",
+                    ":studentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "studentId",
+                      "value": "b9a327ff-1654-4ff9-bf03-9f7bb5d12894"
+                    }
+                  ]
+                },
+                "description": "Ottiene tutte le valutazioni per uno specifico studente (accessibili a TEACHER, ADMIN, SUPER_ADMIN, o a STUDENT per se stesso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazioni per Corso (S || T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/assessments/course/:courseId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "course",
+                    ":courseId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "courseId",
+                      "value": "123"
+                    }
+                  ]
+                },
+                "description": "Ottiene tutte le valutazioni per uno specifico corso (accessibili a TEACHER, ADMIN, SUPER_ADMIN, o a STUDENT iscritto al corso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni valutazioni personali (S)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_STUDENT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/assessments/personal",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "personal"
+                  ]
+                },
+                "description": "Ottiene tutte le valutazioni per lo studente autenticato (accessibili a STUDENT e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni dettagli valutazione personale tramite ID (S || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_STUDENT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/assessments/personal/:personalAssessmentId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    "personal",
+                    ":personalAssessmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "personalAssessmentId",
+                      "value": "56a96e99-20ea-4c03-8a08-e84b2013a71e"
+                    }
+                  ]
+                },
+                "description": "Ottieni dettagli di una specifica valutazione per lo studente autenticato (accessibili a STUDENT per le proprie, e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Crea valutazione (T || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_TEACHER}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"referenceId\": \"12345ffdd\",\n    \"referenceType\": \"EXAM\",\n    \"studentId\": \"b9a327ff-1654-4ff9-bf03-9f7bb5d12894\",\n    \"teacherId\": \"3ca90e54-f53b-4859-98fc-d2e3be9ff3c6\",\n    \"score\": 28.5,\n    \"assessmentDate\": \"2024-03-15T10:30:00\",\n    \"notes\": \"Ottimo lavoro sul compito, attenzione ai dettagli.\",\n    \"courseId\": \"1234\"  \n}"
+                },
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/assessments",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments"
+                  ]
+                },
+                "description": "Crea una nuova valutazione (accessibile a TEACHER e SUPER_ADMIN). Il `teacherId` viene estratto dal token JWT o dagli attributi della richiesta."
+              },
+              "response": []
+            },
+            {
+              "name": "Aggiorna valutazione (T || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n        \"referenceId\": \"ReferenceId richiesto\",\n        \"referenceType\": \"EXAM\",\n        \"studentId\": \"b9a327ff-1654-4ff9-bf03-9f7bb5d12894\",\n        \"teacherId\": \"3ca90e54-f53b-4859-98fc-d2e3be9ff3c6\",\n        \"score\": 20,\n        \"assessmentDate\": \"2025-06-15T12:13:43.281343\",\n        \"notes\": \"Aggiornato non proprio Ottimo lavoro sul compito, attenzione ai dettagli.\",\n        \"courseId\": \"1234\"\n}"
+                },
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/assessments/:assessmentId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    ":assessmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "assessmentId",
+                      "value": "24f34535-b66f-4432-88b7-be9aa0bcb748"
+                    }
+                  ]
+                },
+                "description": "Aggiorna una valutazione esistente (accessibile a TEACHER e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Elimina valutazione (T || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/assessments/:assessmentId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "assessments",
+                    ":assessmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "assessmentId",
+                      "value": "56a96e99-20ea-4c03-8a08-e84b2013a71e"
+                    }
+                  ]
+                },
+                "description": "Elimina una valutazione (accessibile a TEACHER e SUPER_ADMIN)."
+              },
+              "response": []
+            }
+          ],
+          "description": "Endpoint per la gestione delle Valutazioni (Assessment)"
+        },
+        {
+          "name": "Detailed Feedback API",
+          "item": [
+            {
+              "name": "Ottieni tutti i feedback (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/feedback",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback"
+                  ]
+                },
+                "description": "Recupera tutte le voci di feedback per una specifica valutazione. Accessibile a studenti, docenti e admin."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni feedback tramite ID della valutazione (S || T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/feedback/assessment/:assessmentId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback",
+                    "assessment",
+                    ":assessmentId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "assessmentId",
+                      "value": "3f2584bc-3a87-4b2c-af99-dc0eeca1475a"
+                    }
+                  ]
+                },
+                "description": "Recupera tutte le voci di feedback per una specifica valutazione. Accessibile a studenti, docenti e admin."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni feedback tramite ID (S || T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/feedback/:feedbackId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback",
+                    ":feedbackId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "feedbackId",
+                      "value": "0d011381-115e-4bab-95c3-95501b8e9c2a"
+                    }
+                  ]
+                },
+                "description": "Recupera una specifica voce di feedback tramite il suo ID. Accessibile a studenti, docenti e admin."
+              },
+              "response": []
+            },
+            {
+              "name": "Crea un feedback (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"assessmentId\": \"3f2584bc-3a87-4b2c-af99-dc0eeca1475a\",\n    \"feedbackText\": \"Propongo più ciambelle gratis durante il corso!\",\n    \"category\": \"OTHER\",\n    \"strengths\": \"Unico punto di forza è che la pummarola è ncopp\",\n    \"improvementAreas\": \"Unica area dove migliorare: la dizione italiana\"\n}"
+                },
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/feedback",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback"
+                  ]
+                },
+                "description": "Crea una nuova voce di feedback. Richiede ruolo TEACHER, ADMIN o SUPER_ADMIN."
+              },
+              "response": []
+            },
+            {
+              "name": "Aggiorna un feedback (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"assessmentId\": \"3f2584bc-3a87-4b2c-af99-dc0eeca1475a\",\n    \"feedbackText\": \"Aggiorno che voglio ancora più ciambelle gratis durante il corso!\",\n    \"category\": \"OTHER\",\n    \"strengths\": \"Aggiorno molta pummarol ncopp\",\n    \"improvementAreas\": \"Eccert e chiar!\"\n}"
+                },
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/feedback/:feedbackId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback",
+                    ":feedbackId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "feedbackId",
+                      "value": "ce451795-91c4-4703-a262-bae17c4f855f"
+                    }
+                  ]
+                },
+                "description": "Aggiorna una voce di feedback esistente. Richiede ruolo TEACHER, ADMIN o SUPER_ADMIN."
+              },
+              "response": []
+            },
+            {
+              "name": "Elimina un feedback (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/feedback/:feedbackId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "feedback",
+                    ":feedbackId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "feedbackId",
+                      "value": "7677f8ef-c8bb-4808-b6de-353d2ff47932"
+                    }
+                  ]
+                },
+                "description": "Elimina una voce di feedback. Richiede ruolo TEACHER, ADMIN o SUPER_ADMIN."
+              },
+              "response": []
+            }
+          ],
+          "description": "Endpoint per la gestione del DetailedFeedback (Feedback)"
+        },
+        {
+          "name": "Teacher Survey API",
+          "item": [
+            {
+              "name": "Ottieni tutti i questionari (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/teacher-surveys",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys"
+                  ]
+                },
+                "description": "Recupera tutti i questionari di valutazione docenti (solo amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni questionario per ID (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/teacher-surveys/:surveyId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    ":surveyId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "4c109169-9615-49a5-bd5c-e6792d90e950"
+                    }
+                  ]
+                },
+                "description": "Recupera un questionario specifico tramite ID (accessibile a TEACHER, ADMIN, SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni questionari per corso (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/teacher-surveys/course/:courseId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    "course",
+                    ":courseId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "courseId",
+                      "value": "1238cffc"
+                    }
+                  ]
+                },
+                "description": "Recupera tutti i questionari associati a un corso specifico (accessibile a TEACHER, ADMIN, SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni questionari attivi (S || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/teacher-surveys/active",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    "active"
+                  ]
+                },
+                "description": "Recupera tutti i questionari attivi disponibili per la compilazione (accessibile a STUDENT, ADMIN, SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni risultati questionario (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/teacher-surveys/:surveyId/results",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    ":surveyId",
+                    "results"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "4c109169-9615-49a5-bd5c-e6792d90e950"
+                    }
+                  ]
+                },
+                "description": "Recupera i risultati statistici di un questionario completato (solo docente proprietario o amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Crea nuovo questionario (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"courseId\": \"1238cffc\",\n    \"teacherId\": \"3ca90e54-f53b-4859-98fc-d2e3be9ff3c6\",\n    \"academicYear\": \"2024-2025\",\n    \"semester\": 1,\n    \"status\": \"ACTIVE\",\n    \"creationDate\": \"2023-01-10T09:00:00Z\",\n    \"closingDate\": \"2023-01-30T23:59:59Z\",\n    \"title\": \"Questionario Valutazione Insegnamento Matematica I\",\n    \"description\": \"Valutazione dell'insegnamento di Matematica I tenuto dal Prof. Rossi.\",\n    \"questions\": [\n        {\n            \"questionText\": \"Chiarezza della spiegazione?\", \n            \"questionType\": \"RATING\",\n            \"minRating\": 1,   \n            \"maxRating\": 5\n        },\n        {\n            \"questionText\": \"Disponibilità del docente?\", \n            \"questionType\": \"RATING\",\n            \"minRating\": 1,   \n            \"maxRating\": 5\n        },\n        {\n            \"questionText\": \"Suggerimenti per migliorare il corso.\", \n            \"questionType\": \"TEXT\",\n            \"maxLengthText\": 500\n        }\n    ]\n}"
+                },
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/teacher-surveys",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys"
+                  ]
+                },
+                "description": "Crea un nuovo questionario di valutazione per un docente (solo amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Aggiorna questionario (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"courseId\": \"1238cffc\",\n    \"teacherId\": \"3ca90e54-f53b-4859-98fc-d2e3be9ff3c6\",\n    \"academicYear\": \"2024-2025\",\n    \"semester\": 1,\n    \"status\": \"DRAFT\",\n    \"creationDate\": \"2023-01-10T09:00:00Z\",\n    \"closingDate\": \"2023-01-30T23:59:59Z\",\n    \"title\": \"AGGIORNATO: Questionario Valutazione Insegnamento Matematica I\",\n    \"description\": \"AGGIORNATO: Valutazione dell'insegnamento di Matematica I tenuto dal Prof. Rossi.\",\n    \"questions\": [\n        {\n            \"questionText\": \"AGGIORNATO: Chiarezza della spiegazione?\", \n            \"questionType\": \"RATING\",\n            \"minRating\": 1,   \n            \"maxRating\": 5\n        },\n        {\n            \"questionText\": \"AGGIORNATO: Disponibilità del docente?\", \n            \"questionType\": \"RATING\",\n            \"minRating\": 1,   \n            \"maxRating\": 5\n        },\n        {\n            \"questionText\": \"AGGIORNATO: Suggerimenti per migliorare il corso.\", \n            \"questionType\": \"TEXT\",\n            \"maxLengthText\": 500\n        }\n    ]\n}"
+                },
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/teacher-surveys/:surveyId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    ":surveyId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "4c109169-9615-49a5-bd5c-e6792d90e950"
+                    }
+                  ]
+                },
+                "description": "Aggiorna un questionario di valutazione esistente (solo amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Modifica stato questionario (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/teacher-surveys/:surveyId/status?status=ACTIVE",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    ":surveyId",
+                    "status"
+                  ],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "ACTIVE",
+                      "description": "ACTIVE oppure CLOSED"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "4c109169-9615-49a5-bd5c-e6792d90e950"
+                    }
+                  ]
+                },
+                "description": "Cambia lo stato di un questionario (DRAFT/ACTIVE/CLOSED) (solo amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Elimina questionario (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/teacher-surveys/:surveyId",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    ":surveyId"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "4c109169-9615-49a5-bd5c-e6792d90e950"
+                    }
+                  ]
+                },
+                "description": "Elimina un questionario di valutazione (solo se non ha risposte e solo amministratori)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni statistiche generali (A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/teacher-surveys/statistics",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "teacher-surveys",
+                    "statistics"
+                  ]
+                },
+                "description": "Recupera statistiche generali sui questionari del sistema (solo amministratori)."
+              },
+              "response": []
+            }
+          ],
+          "description": "Endpoint per la gestione dei Questionari di Valutazione Docenti"
+        },
+        {
+          "name": "Survey Response API",
+          "item": [
+            {
+              "name": "Ottieni risposte tramite ID questionario (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/surveys/:surveyId/responses",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    ":surveyId",
+                    "responses"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "f7afe2da-954e-490e-af14-12be66f7ea9f"
+                    }
+                  ]
+                },
+                "description": "Recupera tutte le risposte per un questionario specifico (solo docenti del corso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni commenti del questionario (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/surveys/:surveyId/comments",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    ":surveyId",
+                    "comments"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "f7afe2da-954e-490e-af14-12be66f7ea9f"
+                    }
+                  ]
+                },
+                "description": "Recupera tutti i commenti per un questionario specifico (solo docenti del corso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni risultati aggregati del questionario (T || A || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/surveys/:surveyId/results",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    ":surveyId",
+                    "results"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "f7afe2da-954e-490e-af14-12be66f7ea9f"
+                    }
+                  ]
+                },
+                "description": "Recupera risultati aggregati per un questionario specifico (solo docenti del corso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Invia le risposte del questionario (S || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_STUDENT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n    {\n        \"surveyId\": \"f7afe2da-954e-490e-af14-12be66f7ea9f\",\n        \"studentId\": \"b9a327ff-1654-4ff9-bf03-9f7bb5d12894\",\n        \"questionId\": \"cifjeo3\",\n        \"numericRating\": 3,\n        \"textComment\": \"Uè uagliò bell stu rllog\",\n        \"submissionDate\": \"2024-03-15T14:00:00\"\n    },\n    {\n        \"surveyId\": \"f7afe2da-954e-490e-af14-12be66f7ea9f\",\n        \"studentId\": \"b9a327ff-1654-4ff9-bf03-9f7bb5d12894\",\n        \"questionId\": \"cifjeo3\",\n        \"numericRating\": 5,\n        \"textComment\": \"Uè uagliò bell stu rllog 2.0\",\n        \"submissionDate\": \"2024-03-15T14:00:00\"\n    }\n]"
+                },
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/surveys/:surveyId/responses",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    ":surveyId",
+                    "responses"
+                  ],
+                  "variable": [
+                    {
+                      "key": "surveyId",
+                      "value": "f7afe2da-954e-490e-af14-12be66f7ea9f"
+                    }
+                  ]
+                },
+                "description": "Invia multiple risposte per un questionario specifico (solo studenti iscritti al corso)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni le mie risposte ai questionari (S || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_STUDENT}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/surveys/my-responses",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    "my-responses"
+                  ]
+                },
+                "description": "Recupera tutte le risposte inviate dall'utente autenticato (solo studenti e SUPER_ADMIN)."
+              },
+              "response": []
+            },
+            {
+              "name": "Ottieni questionari disponibili (S || SA)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{JWT_SADMIN}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{MS_Assessment_Feedback_URL}}/{{API_V1}}/surveys/available",
+                  "host": [
+                    "{{MS_Assessment_Feedback_URL}}"
+                  ],
+                  "path": [
+                    "{{API_V1}}",
+                    "surveys",
+                    "available"
+                  ]
+                },
+                "description": "Recupera tutti i questionari attivi per i corsi a cui lo studente è iscritto (solo studenti e SUPER_ADMIN)."
+              },
+              "response": []
+            }
+          ],
+          "description": "Endpoint per la gestione delle Risposte ai Questionari"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# Stage 1: Build
+FROM maven:3.9.4-eclipse-temurin-17 AS build
+
+WORKDIR /app
+
+# Copia il parent POM dalla radice del monorepo
+COPY pom.xml /parent/pom.xml
+WORKDIR /parent
+RUN mvn install -N
+
+# Torna alla directory del microservizio
+WORKDIR /app
+
+# Copia il pom.xml per scaricare le dipendenze
+COPY api-gateway/pom.xml .
+
+# Scarica le dipendenze
+RUN mvn dependency:go-offline -B
+
+# Copia il codice sorgente
+COPY api-gateway/src src
+
+# Costruisci l'applicazione
+RUN mvn clean package -DskipTests
+
+# Stage 2: Runtime
+FROM eclipse-temurin:17-jre-focal
+
+VOLUME /tmp
+
+# Copia il JAR costruito nel primo stage
+COPY --from=build /app/target/api-gateway-0.0.1-SNAPSHOT.jar app.jar
+
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+EXPOSE 8080
