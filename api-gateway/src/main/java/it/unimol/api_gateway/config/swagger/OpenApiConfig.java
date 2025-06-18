@@ -21,9 +21,9 @@ public class OpenApiConfig {
     ) {
         return new OpenAPI()
                 .info(new Info()
-                        .title(name + " - Documentazione API Aggregate")
+                        .title(name)
                         .version(version)
-                        .description(description + " - This API Gateway aggregates all microservices documentation")
+                        .description(description)
                         .termsOfService("https://github.com/Luxauram/SPRINGBOOT-UNIMOL-MS-Valutazione-Feedback")
                         .license(new License()
                                 .name("Apache License, Version 2.0")

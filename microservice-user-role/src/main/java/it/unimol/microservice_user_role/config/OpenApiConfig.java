@@ -20,9 +20,14 @@ public class OpenApiConfig {
             @Value("${app.description}") String description
     ) {
         return new OpenAPI()
-                .info(new Info().title(name).version(version).description(description)
+                .info(new Info()
+                        .title(name)
+                        .version(version)
+                        .description(description)
                         .termsOfService("https://github.com/Luxauram/SPRINGBOOT-UNIMOL-MS-Valutazione-Feedback")
-                        .license(new License().name("Apache License, Version 2.0").identifier("Apache-2.0")
+                        .license(new License()
+                                .name("Apache License, Version 2.0")
+                                .identifier("Apache-2.0")
                                 .url("https://opensource.org/license/apache-2-0/")))
                 .components(new Components()
                         .addSecuritySchemes("bearerAuth", new SecurityScheme()

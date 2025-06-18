@@ -646,20 +646,32 @@ bisogno della password generata dinamicamente da SrpingBoot, ecco come recuperar
 Una volta che il microservizio è in esecuzione, si potrà accedere alle seguenti interfacce web:
 
 * **RabbitMQ Management Console**:
-    * **URL**: `http://localhost:15672`
+    * **URL**: [http://localhost:15672](http://localhost:15672)
     * **Descrizione**: Interfaccia di gestione per monitorare e interagire con le code di messaggi di RabbitMQ.
 
 * **Swagger UI - API-Gateway**:
-    * **URL**: `http://localhost:8080/webjars/swagger-ui/index.html`
-    * **Descrizione**: Documentazione interattiva dell'API per l'api-gateway.
+    * **URL**: [http://localhost:8080/webjars/swagger-ui/index.html](http://localhost:8080/webjars/swagger-ui/index.html)
+    * **Descrizione**: Documentazione interattiva delle API per l'api-gateway.
+
+* **Open API Docs - API-Gateway**:
+    * **URL**: [http://localhost:8080/v3/api-docs](http://localhost:8080/webjars/swagger-ui/index.html)
+    * **Descrizione**: Visualizzazione JSON delle API per l'api-gateway.
 
 * **Swagger UI - Microservizio User Role**:
-    * **URL**: `http://localhost:8081/swagger-ui/index.html`
-    * **Descrizione**: Documentazione interattiva dell'API per il microservizio di gestione utente e ruoli.
+    * **URL**: [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html)
+    * **Descrizione**: Documentazione interattiva delle API per il microservizio di gestione utente e ruoli.
+
+* **Open API Docs - Microservizio User Role**:
+    * **URL**: [http://localhost:8081/v3/api-docs](http://localhost:8081/swagger-ui/index.html)
+    * **Descrizione**: Visualizzazione JSON delle API per il microservizio di gestione utente e ruoli.
 
 * **Swagger UI - Microservizio Assessment Feedback**:
-    * **URL**: `http://localhost:8082/swagger-ui/index.html`
-    * **Descrizione**: Documentazione interattiva dell'API per il microservizio di gestione valutazioni e feedback. 
+    * **URL**: [http://localhost:8082/swagger-ui/index.html](http://localhost:8082/swagger-ui/index.html])
+    * **Descrizione**: Documentazione interattiva delle API per il microservizio di gestione valutazioni e feedback. 
+
+* **Open API Docs - Microservizio Assessment Feedback**:
+    * **URL**: [http://localhost:8082/v3/api-docs](http://localhost:8082/swagger-ui/index.html])
+    * **Descrizione**: Visualizzazione JSON delle API per il microservizio di gestione valutazioni e feedback.
 
 ---
 

@@ -31,14 +31,16 @@ public class GatewayConfig {
         }
 
         return builder.routes()
-                // ============== ROUTE PUBBLICHE (SENZA JWT) ==============
+                // ===============================
+                // ROUTE PUBBLICHE (SENZA JWT)
+                // ===============================
 
-                // Auth endpoints (login, refresh, init) - PUBBLICI
+                // Auth endpoints (login, refresh, init)
                 .route("auth-public", r -> r.path("/api/v1/auth/login", "/api/v1/auth/refresh-token", "/api/v1/users/superadmin/init")
                         .filters(f -> f.stripPrefix(0))
                         .uri(userServiceUri))
 
-                // Health-Check endpoints - PUBBLICI
+                // Health-Check endpoints
                 .route("user-service-health", r -> r.path("/api/user-service/actuator/**")
                         .filters(f -> f.rewritePath("/api/user-service/actuator/(?<segment>.*)", "/actuator/${segment}"))
                         .uri(userServiceUri))
@@ -47,23 +49,34 @@ public class GatewayConfig {
                         .filters(f -> f.rewritePath("/api/assessment-service/actuator/(?<segment>.*)", "/actuator/${segment}"))
                         .uri(assessmentServiceUri))
 
-                // Gateway actuator - PUBBLICO
+                // Gateway actuator
                 .route("gateway-actuator", r -> r.path("/actuator/**")
                         .filters(f -> f.stripPrefix(0))
                         .uri("http://localhost:8080"))
 
-                // Swagger/OpenAPI endpoints - PUBBLICI
-                .route("swagger-ui", r -> r.path("/swagger-ui/**", "/webjars/**")
-                        .filters(f -> f.stripPrefix(0))
-                        .uri("forward:/"))
+                // Swagger/OpenAPI - User Service
+                .route("user-service-openapi", r -> r.path("/user-service/v3/api-docs/**")
+                        .filters(f -> f.rewritePath("/user-service/v3/api-docs(?<segment>.*)", "/v3/api-docs${segment}"))
+                        .uri(userServiceUri))
 
-                .route("openapi-docs", r -> r.path("/v3/api-docs/**")
-                        .filters(f -> f.stripPrefix(0))
-                        .uri("forward:/"))
+                .route("user-service-swagger-ui", r -> r.path("/user-service/swagger-ui/**")
+                        .filters(f -> f.rewritePath("/user-service/swagger-ui(?<segment>.*)", "/swagger-ui${segment}"))
+                        .uri(userServiceUri))
 
-                // ============== ROUTE PROTETTE (CON JWT) ==============
+                // Swagger/OpenAPI - Assessment Service
+                .route("assessment-service-openapi", r -> r.path("/assessment-service/v3/api-docs/**")
+                        .filters(f -> f.rewritePath("/assessment-service/v3/api-docs(?<segment>.*)", "/v3/api-docs${segment}"))
+                        .uri(assessmentServiceUri))
 
-                // User-Role Service - PROTETTE
+                .route("assessment-service-swagger-ui", r -> r.path("/assessment-service/swagger-ui/**")
+                        .filters(f -> f.rewritePath("/assessment-service/swagger-ui(?<segment>.*)", "/swagger-ui${segment}"))
+                        .uri(assessmentServiceUri))
+
+                // ===============================
+                // ROUTE PROTETTE (CON JWT)
+                // ===============================
+
+                // MS User Role
                 .route("user-service-auth-protected", r -> r.path("/api/v1/auth/**")
                         .and().not(p -> p.path("/api/v1/auth/login", "/api/v1/auth/refresh-token"))
                         .filters(f -> f
@@ -84,7 +97,7 @@ public class GatewayConfig {
                                 .stripPrefix(0))
                         .uri(userServiceUri))
 
-                // Assessment-Feedback Service - PROTETTE
+                // MS Assessment-Feedback
                 .route("assessment-service-assessments", r -> r.path("/api/v1/assessments/**")
                         .filters(f -> f
                                 .filter(jwtAuthenticationFilter.apply(new JwtAuthenticationFilter.Config()))

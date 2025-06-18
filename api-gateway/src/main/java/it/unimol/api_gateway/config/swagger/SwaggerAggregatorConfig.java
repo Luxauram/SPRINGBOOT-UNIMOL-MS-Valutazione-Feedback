@@ -1,10 +1,14 @@
 package it.unimol.api_gateway.config.swagger;
 
+
 import org.springdoc.core.properties.AbstractSwaggerUiConfigProperties;
 import org.springdoc.core.properties.SwaggerUiConfigProperties;
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.http.HttpMethod;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -18,26 +22,22 @@ public class SwaggerAggregatorConfig {
         SwaggerUiConfigProperties config = new SwaggerUiConfigProperties();
         Set<AbstractSwaggerUiConfigProperties.SwaggerUrl> urls = new HashSet<>();
 
-        // API Gateway stesso
+        // API Gateway
         urls.add(new AbstractSwaggerUiConfigProperties.SwaggerUrl(
-                "API Gateway", "/v3/api-docs", "gateway"));
+                "API Gateway", "/v3/api-docs", "api-gateway"));
 
-        // User Service - endpoint diretti dei microservizi
+        // MS User Role
         urls.add(new AbstractSwaggerUiConfigProperties.SwaggerUrl(
-                "User & Role Service", "/api/user-service/v3/api-docs", "user-service"));
+                "User & Role Service", "/user-service/v3/api-docs", "microservice-user-role"));
 
-        // Assessment Service - endpoint diretto del microservizio
+        // MS Assessment Feedback
         urls.add(new AbstractSwaggerUiConfigProperties.SwaggerUrl(
-                "Assessment & Feedback Service", "/api/assessment-service/v3/api-docs", "assessment-service"));
+                "Assessment & Feedback Service", "/assessment-service/v3/api-docs", "microservice-assessment-feedback"));
 
         config.setUrls(urls);
-
-        // Configurazioni aggiuntive per evitare problemi
-        config.setConfigUrl("/v3/api-docs/swagger-config");
-        config.setValidatorUrl("");
-        config.setTryItOutEnabled(true);
-        config.setFilter("true");
+        config.setOperationsSorter("alpha");
 
         return config;
     }
+
 }
